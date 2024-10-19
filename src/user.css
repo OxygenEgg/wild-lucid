@@ -71,7 +71,7 @@
 	--scrollbar-color: rgba(var(--spice-rgb-text), 0.75) !important;
 
 	/* Border */
-	--button-border-radius: 0.5rem;
+	--button-border-radius: 50px;
 	--icon-border-radius: 0.5rem;
 	--card-border-radius: 0.5rem;
 	--border-radius-rounded: 9999px;
@@ -376,12 +376,14 @@ button.main-topBar-buddyFeed[aria-label="Lucid Settings"]:hover svg {
 	fill: var(--spice-text);
 }
 
+/* TODO: is this right? */
 .main-avatar-avatar,
 .main-userWidget-hasAvatar,
 .main-avatar-avatar div,
 .main-avatar-avatar img {
 	min-height: 2rem !important;
 	min-width: 2rem !important;
+	border-radius: 50px;
 }
 
 .main-nowPlayingView-aboutArtistV2Avatar,
@@ -446,7 +448,7 @@ input,
 .main-topBar-searchBar,
 .b7r2WRiu5f9Q99qmyreh,
 .main-globalNav-searchInputContainer {
-	border-radius: var(--card-border-radius) !important;
+	border-radius: 50px !important;
 	background-color: rgba(var(--spice-rgb-card), 0.25) !important;
 	box-shadow: none !important;
 }
