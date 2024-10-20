@@ -106,14 +106,14 @@ export function applyColorPaletteToCSS(
 		)
 		.join("")}\n}`;
 	styleContent +=
-		":root{\nwill-change: --spice-accent,--spice-rgb-accent,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-progress-bar,--spice-rgb-progress-bar,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: all 0.5s ease-in-out;\n}";
+		":root{\nwill-change: --spice-accent,--spice-rgb-accent,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-progress-bar,--spice-rgb-progress-bar,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: all 1s ease-in-out;\n}";
 
 	styleElement.textContent = styleContent;
 }
 
 export async function resetCSSColorVariables(styleElement: HTMLElement) {
 	styleElement.textContent =
-		":root{\nwill-change: --spice-accent,--spice-rgb-accent,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-progress-bar,--spice-rgb-progress-bar,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: all 0.5s ease-in-out;\n}";
+		":root{\nwill-change: --spice-accent,--spice-rgb-accent,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-progress-bar,--spice-rgb-progress-bar,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: all 1s ease-in-out;\n}";
 }
 
 function generateDarkModePalette({
@@ -122,10 +122,10 @@ function generateDarkModePalette({
 	tertiaryColor,
 }: ExtractedColors): WildColorPalette {
 	return {
-		"progress-bar": lightenColor(secondaryColor, 0.6),
-		accent: lightenColor(baseColor, 0.4),
-		button: lightenColor(tertiaryColor, 0.4),
-		"button-active": lightenColor(tertiaryColor, 0.4),
+		"progress-bar": secondaryColor,
+		accent: baseColor,
+		button: tertiaryColor,
+		"button-active": tertiaryColor,
 		primary: baseColor,
 		secondary: secondaryColor,
 		tertiary: tertiaryColor,

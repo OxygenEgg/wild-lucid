@@ -8,7 +8,9 @@ import { logError, logInfo } from "@/utils/logUtils";
 import React from "react";
 
 const useDynamicBackground = () => {
-	const { isDynamicColor } = useSettingsStore();
+	// FIXME: why does setting this to true make it work???
+	// const { isDynamicColor } = useSettingsStore();
+	const isDynamicColor = true;
 	const { artworkData } = useLucidStore();
 	const styleRef = React.useRef<HTMLStyleElement | null>(null);
 	const prevArtURL = React.useRef<string | null>(null);

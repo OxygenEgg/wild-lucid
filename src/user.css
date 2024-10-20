@@ -221,6 +221,10 @@ textarea,
 	letter-spacing: 0.025rem;
 }
 
+.IconWrapper__Wrapper-sc-16usrgb-0.Wrapper-medium-only > svg {
+	fill: var(--spice-button-active);
+}
+
 .encore-text-marginal,
 .encore-text-body-small,
 .encore-text-body-medium,
@@ -1316,6 +1320,14 @@ dialog {
 		display: none;
 		visibility: hidden;
 	}
+}
+
+.encore-bright-accent-set {
+	transform: background 1s ease;
+}
+
+.main-trackList-trackListRow.main-trackList-active .main-trackList-rowTitle {
+	transform: color 1s ease;
 }
 
 /* Tag container */
