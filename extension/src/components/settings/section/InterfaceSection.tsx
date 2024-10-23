@@ -3,18 +3,15 @@ import { isWindowsPlatform } from "@/constants/constants";
 import {
   BORDER_STYLE_OPTIONS,
   GRAIN_MODE_OPTIONS,
-  NPV_MODE_OPTIONS,
-  NPV_POSITION_OPTIONS,
   PLAYLIST_BACKGROUND_MODE_OPTIONS,
   PLAYLIST_VIEW_MODE_OPTIONS,
   SETTINGS_ACCESS_MODE_OPTIONS,
 } from "@/constants/dropdown";
 import { useSettingsStore } from "@/store/useSettingsStore";
-import type { BorderStyle } from "@/types/border";
+import type { BorderRadius, BorderStyle } from "@/types/border";
 import type { FontTypes } from "@/types/font";
 import type { GrainEffect } from "@/types/grains";
 import type { SettingsPositions } from "@/types/main";
-import { NpvMode, NpvPosition } from "@/types/npv";
 import type {
   PlaylistBackgroundImageMode,
   PlaylistViewMode,
@@ -40,16 +37,12 @@ const InterfaceSection = () => {
         roundedRadius: borderRoundedRadius,
       },
     },
-    npvSettings: { mode: npvMode, position: npvPosition, blur: npvBlur },
     setFont,
     setGrainEffect,
     setControlHeight,
     setPagesBackgroundImageMode,
     setPlaylistViewMode,
     setIsScrollMode,
-    setNpvMode,
-    setNpvBlur,
-    setCompactNpvPosition,
     setBorderColor,
     setBorderStyle,
     setBorderThickness,
@@ -58,14 +51,15 @@ const InterfaceSection = () => {
     setSettingAccessPosition,
   } = useSettingsStore();
 
-  const [selectedGrainMode, setSelectedGrainMode] = useState(grainEffect);
+  const [selectedGrainMode, setSelectedGrainMode] =
+    useState<string>(grainEffect);
   const [selectedBackgroundImageMode, setSelectedBackgroundImageMode] =
     useState(backgroundImageMode);
   const [selectedPlaylistViewMode, setSelectedPlaylistViewMode] =
     useState(playlistViewMode);
 
   const onGrainModeChange = (value: string) => {
-    setSelectedGrainMode(value as GrainEffect);
+    setSelectedGrainMode(value);
     setGrainEffect(value as GrainEffect);
   };
   const onBackgroundImageModeChange = (value: string) => {
@@ -94,8 +88,8 @@ const InterfaceSection = () => {
           },
           settings: {
             step: 1,
-            min: 1,
-            max: 64,
+            min: 0,
+            max: 128,
           },
         },
       },
@@ -114,78 +108,6 @@ const InterfaceSection = () => {
           selectedValue: settingAccessPosition,
           onChange: (value) => {
             setSettingAccessPosition(value as SettingsPositions);
-          },
-        },
-      },
-    },
-    {
-      id: "npvSettings",
-      conditionalRender: true,
-      cardProps: {
-        title: "Set Right Sidebar Mode",
-        tooltip: (
-          <>
-            <h3 className='encore-text encore-text-medium-bold'>
-              Select how the right sidebar appears during playback.
-            </h3>
-            <span>
-              Choose 'Compact' for a minimized view or 'Normal' for a detailed
-              layout
-            </span>
-          </>
-        ),
-        type: "dropdown",
-        settings: {
-          options: NPV_MODE_OPTIONS,
-          placeholder: npvMode,
-          selectedValue: npvMode,
-          onChange: (value) => {
-            setNpvMode(value as NpvMode);
-          },
-        },
-      },
-    },
-    {
-      id: "npvSettings",
-      conditionalRender: npvMode === "compact",
-      cardProps: {
-        title: "Set Compact Sidebar Position",
-        tooltip: (
-          <>
-            <h3 className='encore-text encore-text-medium-bold'>
-              Select where the right sidebar appears.
-            </h3>
-          </>
-        ),
-        type: "dropdown",
-        settings: {
-          options: NPV_POSITION_OPTIONS,
-          placeholder: npvPosition,
-          selectedValue: npvPosition,
-          onChange: (value) => {
-            setCompactNpvPosition(value as NpvPosition);
-          },
-        },
-      },
-    },
-    {
-      id: "npvSettings",
-      sectionName: "Styles",
-      conditionalRender: npvMode === "compact",
-      cardProps: {
-        title: `Set Npv Background Blur`,
-        type: "input",
-        settings: {
-          label: "Npv Background Blur input",
-          defaultValue: npvBlur,
-          onChange: (value) => {
-            setNpvBlur(Number(value));
-          },
-          type: "number",
-          settings: {
-            max: 256,
-            min: 0,
-            step: 0.5,
           },
         },
       },
