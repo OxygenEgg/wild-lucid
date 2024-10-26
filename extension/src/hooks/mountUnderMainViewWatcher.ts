@@ -1,48 +1,40 @@
 import { useLucidStore } from "@/store/useLucidStore";
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 
 /**
  * Observes changes in Spotify's "under-main-view" container
  * to extract and apply the background image as a CSS variable.
  */
 const mountUnderMainViewWatcher = () => {
-	const {
-		underMainBackgroundImage,
-		setUnderMainViewBackgroundImage,
-		rootStyle,
-	} = useLucidStore();
+	const { underMainBackgroundImage, setUnderMainViewBackgroundImage } = useLucidStore();
 
-	const handleMutations = React.useCallback(
+	const handleMutations = useCallback(
 		(mutationsList: MutationRecord[]) => {
-			const targetImageNode = mutationsList.reduce<HTMLDivElement | null>(
-				(foundNode, mutation) => {
-					if (foundNode) return foundNode; // Early return if already found
+			const targetImageNode = mutationsList.reduce<HTMLDivElement | null>((foundNode, mutation) => {
+				if (foundNode) return foundNode; // Early return if already found
 
-					if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-						const firstAddedNode = mutation.addedNodes[0];
-						if (firstAddedNode.firstChild instanceof HTMLDivElement) {
-							return firstAddedNode.firstChild as HTMLDivElement;
-						}
+				if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+					const firstAddedNode = mutation.addedNodes[0];
+					if (firstAddedNode.firstChild instanceof HTMLDivElement) {
+						return firstAddedNode.firstChild as HTMLDivElement;
 					}
-					return null;
-				},
-				null,
-			);
+				}
+				return null;
+			}, null);
 
+			let imageUrl: string | null = null;
 			if (targetImageNode?.style) {
-				const imageUrl = targetImageNode.style.backgroundImage.replace(
-					/url\(['"]?([^'"]*)['"]?\)/i,
-					"$1",
-				);
-				setUnderMainViewBackgroundImage(imageUrl);
+				imageUrl = targetImageNode.style.backgroundImage.replace(/url\(['"]?([^'"]*)['"]?\)/i, "$1");
 			} else if (underMainBackgroundImage !== null) {
-				setUnderMainViewBackgroundImage(null);
+				imageUrl = null;
 			}
+
+			setUnderMainViewBackgroundImage(imageUrl);
 		},
 		[setUnderMainViewBackgroundImage, underMainBackgroundImage],
 	);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const observer = new MutationObserver(handleMutations);
 		const underMainView = document.querySelector(".under-main-view");
 
@@ -53,15 +45,15 @@ const mountUnderMainViewWatcher = () => {
 		return () => observer.disconnect();
 	}, [handleMutations]);
 
-	React.useEffect(() => {
-		rootStyle.setProperty(
+	useEffect(() => {
+		document.documentElement.style.setProperty(
 			"--under-main-view-art-image",
 			underMainBackgroundImage ? `url(${underMainBackgroundImage})` : null,
 		);
 		return () => {
-			rootStyle.removeProperty("--under-main-view-art-image");
+			document.documentElement.style.removeProperty("--under-main-view-art-image");
 		};
-	}, [underMainBackgroundImage, rootStyle]);
+	}, [underMainBackgroundImage]);
 };
 
 export default mountUnderMainViewWatcher;

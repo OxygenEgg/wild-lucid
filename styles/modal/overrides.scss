@@ -1,0 +1,56 @@
+$card-bg: rgba(150, 150, 150, 0.1);
+
+.GenericModal__overlay {
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(var(--spice-rgb-shadow), 0.25);
+}
+
+.main-confirmDialog-container,
+.main-trackCreditsModal-container,
+.main-embedWidgetGenerator-container {
+  @include modal-background;
+  @include default-border;
+  max-height: 85vh;
+}
+
+.main-embedWidgetGenerator-container {
+  .main-trackCreditsModal-header {
+    padding: 0.75rem 1.25rem;
+    background-color: transparent;
+    .main-type-alto {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+.JnpOnFaQfrRIA2fYe88A,
+.uJjmxe0T11dUVeW6Biz8 {
+  @include modal-background;
+}
+.JnpOnFaQfrRIA2fYe88A {
+  max-height: 70vh !important;
+}
+
+dialog {
+  border: none !important;
+}
+
+.desktopmodals-aboutSpotifyModal-container {
+  @include modal-background;
+  @include default-border;
+
+  .desktopmodals-aboutSpotifyModal-licensing {
+    background-color: $card-bg;
+  }
+}

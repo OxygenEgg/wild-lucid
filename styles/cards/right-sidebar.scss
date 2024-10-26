@@ -1,0 +1,42 @@
+.Root__right-sidebar {
+  @include default-border-with-radius;
+  background: $right-sidebar-bg;
+
+  .hpzTKCoO0rllEslIOMPo,
+  div[data-overlayscrollbars-initialize],
+  div[data-overlayscrollbars="host"] {
+    padding-bottom: $root-padding-bottom;
+  }
+
+  .IkRGajTjItEFQkRMeH6v,
+  .f2UE9n5nZcbgZrGYTU3r,
+  .ffFwfKcPDbmAPLXzxzKq,
+  .ffFwfKcPDbmAPLXzxzKq:before,
+  .NowPlayingView {
+    @include bg-none;
+  }
+
+  .main-nowPlayingView-nowPlayingWidget {
+    .main-nowPlayingView-contextItemInfo:before {
+      @include bg-none;
+    }
+  }
+
+  .main-nowPlayingView-section {
+    background-color: rgba(var(--spice-rgb-selected-row), 0.05);
+    border-radius: $border-radius-lg;
+    @include default-border;
+
+    .main-nowPlayingView-aboutArtistV2Button {
+      @include bg-none;
+      .main-nowPlayingView-aboutArtistV2Bio {
+        text-wrap: balance;
+      }
+    }
+  }
+
+  .mdMUqcSHFw1lZIcYEblu {
+    @include box-shadow-to-bottom;
+    z-index: 1;
+  }
+}

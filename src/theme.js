@@ -7,7 +7,7 @@
     #lucid-main .background-container .background-wrapper div { z-index: -1 !important; }
   `}function At(t,a,l,r){let n=!1,o=null;new MutationObserver(()=>{var e=t.querySelector(a);e!==o&&(e&&!n?(p("Applying background z-index: "+r),n=!0,Bt(l,r)):n&&(p("Removing background z-index: "+r),n=!1,document.querySelector("#lyrics-cinema .lyrics-lyrics-background, #lyrics-cinema .lyrics-lyrics-container")?Bt(l,6):$t(l)),o=e)}).observe(t,{childList:!0}),$t(l)}var B=t(a()),Ot=()=>(f("Render <Main />"),B.default.useEffect(()=>{(()=>{var l=Spicetify.Locale;function r(e){return e.replace(/[{0}{1}«»”“]/g,"").trim()}if(l){r(l.get("playlist.a11y.play")||""),r(l.get("playlist.a11y.pause")||"");var n=l.get("play"),o=l.get("pause"),i=l.get("browse"),s=l.get("playback-control.skip-forward"),c=l.get("playback-control.skip-back"),u=l.get("buddy-feed.friend-activity"),d=l.get("tracklist.a11y.play")||"",m=l.get("view.web-player-home");let e,t;["zh-CN","zh-TW","am","fi"].includes(l.getLocale())?[e,t]=d.split("{1}"):[e,t]=d.split("{0}"),e=r(e),t=r(t);var d=l.get("playback-control.enable-repeat"),p=l.get("playback-control.enable-repeat-one"),l=l.get("playback-control.disable-repeat"),f="lucid_button_styles";let a=document.getElementById(f);a||((a=document.createElement("style")).id=f,document.head.appendChild(a)),a.innerHTML=`
 .main-repeatButton-button[aria-checked="false"],
-.player-controls__right button[aria-label*="${d}"]  span{
+.player-controls__right button[aria-label*="${u}"]  span{
   -webkit-mask-image: var(--repeat-off-icon, url("https://sanooj.is-a.dev/Spicetify-Lucid/assets/icons/repeat-off.svg"));
   mask-image: var(--repeat-off-icon, url("https://sanooj.is-a.dev/Spicetify-Lucid/assets/icons/repeat-off.svg"));
   background-color: var(--spice-subtext);
@@ -23,7 +23,7 @@
 }
 
 .main-repeatButton-button[aria-checked="true"],
-.player-controls__right button[aria-label*="${p}"] span {
+.player-controls__right button[aria-label*="${m}"] span {
   -webkit-mask-image: var(--repeat-icon, url("https://sanooj.is-a.dev/Spicetify-Lucid/assets/icons/repeat.svg"));
   mask-image: var(--repeat-icon, url("https://sanooj.is-a.dev/Spicetify-Lucid/assets/icons/repeat.svg"));
   background-color: var(--spice-accent);
@@ -160,23 +160,8 @@ svg {
   mask-image: var(--next-icon, url("https://sanooj.is-a.dev/Spicetify-Lucid/assets/icons/next.svg"));
 }
 
-button[aria-label="${u}"]>path {
-  display: none;
-}
-
-.main-actionButtons>div>button[aria-label="${u}"] svg,
-.main-actionButtons>button[aria-label="${u}"] svg {
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-position: center;
-  mask-position: center;
-  background-color: var(--spice-subtext) !important;
-  -webkit-mask-image: var(--people-team-icon, url("https://sanooj.is-a.dev/Spicetify-Lucid/assets/icons/people-team.svg"));
-  mask-image: var(--people-team-icon, url("https://sanooj.is-a.dev/Spicetify-Lucid/assets/icons/people-team.svg"));
-}
-
-.main-yourLibraryX-navLink[aria-label="${m}"] svg,
-button[aria-label="${m}"] svg {
+.main-yourLibraryX-navLink[aria-label="${d}"] svg,
+button[aria-label="${d}"] svg {
   path {
 display: none !important;
   }
@@ -187,8 +172,8 @@ display: none !important;
 }
 
 
-.main-yourLibraryX-navLink[aria-label="${m}"].active svg,
-.main-globalNav-navLinkActive[aria-label="${m}"] svg {
+.main-yourLibraryX-navLink[aria-label="${d}"].active svg,
+.main-globalNav-navLinkActive[aria-label="${d}"] svg {
   path {
 display: none !important;
   }
@@ -198,7 +183,7 @@ display: none !important;
   background-color: var(--spice-text) !important;
 }
 
-.main-yourLibraryX-navLink[aria-label="${m}"].active svg {
+.main-yourLibraryX-navLink[aria-label="${d}"].active svg {
   path {
 display: none !important;
   }

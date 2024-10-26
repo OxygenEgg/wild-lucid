@@ -1,4 +1,6 @@
-type PageCategoryType =
+export type SettingsPositions = "nav" | "context-menu";
+
+export type PageCategoryType =
 	| "artist"
 	| "playlist"
 	| "album"
@@ -6,28 +8,29 @@ type PageCategoryType =
 	| "show"
 	| "genre"
 	| "concert"
-	| "other";
+	| "other"
+	| "search";
 
 // Lucid Store Types
-type LucidStoreValues = {
+export type LucidStoreValues = {
 	pageCategory: PageCategoryType;
 	underMainBackgroundImage: string | null;
-	rootStyle: CSSStyleDeclaration;
 	artworkData: ArtworkData;
+	windowZoom: number;
 };
 
-type LucidStoreSetters = {
+export type LucidStoreSetters = {
 	updateArtworkData: (newArtwork: Partial<ArtworkData>) => void;
 	setPageCategory: (pageCategory: PageCategoryType) => void;
 	setUnderMainViewBackgroundImage: (url: string | null) => void;
 	setIsCustomControls: (isCustomControls: boolean) => void;
-	setRootStyle: (rootStyle: CSSStyleDeclaration) => void;
+	setWindowZoom: (windowZoom: number) => void;
 };
 
-type LucidStoreState = LucidStoreValues & LucidStoreSetters;
+export type LucidStoreState = LucidStoreValues & LucidStoreSetters;
 
 /*  Artwork Data Type */
-type ArtworkData = {
+export type ArtworkData = {
 	nowPlayingArtURL: string;
 	currentPageArtURL: string;
 	currentPageURI: string;

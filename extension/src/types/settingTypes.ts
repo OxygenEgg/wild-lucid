@@ -1,147 +1,132 @@
-import type { ReactNode } from "react";
+import type { BackgroundMode, BackgroundSettings, BackgroundStyle } from "@/types/background";
+import type { BorderSettings, BorderStyle } from "@/types/border";
+import type { ButtonProps } from "@/types/button";
+import type { ColorSettings } from "@/types/colors";
+import type { DropdownSetting } from "@/types/dropdown";
+import type { FontData, FontTypes } from "@/types/font";
+import type { GrainEffect } from "@/types/grains";
+import type { InputSetting } from "@/types/input";
+import type { InterfaceSettings } from "@/types/interface";
+import type { SettingsPositions } from "@/types/main";
+import type { PlaylistBackgroundImageMode, PlaylistViewMode } from "@/types/pages";
+import type { PlaybarMode, PlaybarSettings, PlaybarStyles } from "@/types/playbar";
+import type { StyleOptions } from "@/types/styles";
+import type { ToggleSetting } from "@/types/toggle";
+import type { CSSProperties, ReactNode } from "react";
 
-// Component Props
-type SettingSectionProps = {
-	title: string;
-	description?: string;
-	children: ReactNode;
+// Settings Store Start
+export type ThemeSettings = {
+	backgroundSettings: BackgroundSettings;
+	interfaceSettings: InterfaceSettings;
+	colorSettings: ColorSettings;
+	playbarSettings: PlaybarSettings;
+	settingAccessPosition: SettingsPositions;
 };
 
-type SettingCardProps = {
-	title?: string | null;
-	tooltip?: ReactNode;
-	selectedValue?: string | ReactNode;
-	children: ReactNode;
+export type MainSettingsActions = {
+	setSettingAccessPosition: (settingAccessPosition: SettingsPositions) => void;
+	setBackgroundSettings: (backgroundSettings: BackgroundSettings) => void;
+	setBackgroundStyles: (styles: StyleOptions, mode: BackgroundMode) => void;
+	setInterfaceSettings: (interfaceSettings: InterfaceSettings) => void;
+	setColorSettings: (colorSettings: ColorSettings) => void;
+	setBorderSettings: (borderSettings: BorderSettings) => void;
+	setPlaybarSettings: (playbarSettings: PlaybarSettings) => void;
+	resetAllSettings: () => void;
 };
 
-type SettingSectionData = {
-	key: string;
-	title: string;
-	content: ReactNode;
-	description?: string;
-}[];
+export type SubSettingsActions = {
+	exportSettings: () => string;
 
-// Type for Options
-type BackgroundMode = "animated" | "static" | "solid";
-type GrainEffect = "default" | "stary" | "none";
-type PlaylistViewMode = "default" | "compact" | "card";
-type PlaylistImageMode = "now-playing" | "inherit" | "none";
-type PlaybarMode = "compact" | "default";
+	importSettings: (json: string) => boolean;
 
-// Style Settings
-type StyleOptions = {
-	blur?: number;
-	time?: number; // Time in seconds
-	width?: number;
-	height?: number;
-	opacity?: number;
-	contrast?: number;
-	paddingX?: number;
-	paddingY?: number;
-	brightness?: number;
-	saturation?: number;
-	backdropBlur?: number;
-	borderRadius?: number;
-	backgroundColor?: string; // Hex color code
-};
+	setBackgroundMode: (mode: BackgroundMode) => void;
 
-type CustomCSSProperties = React.CSSProperties & {
-	"--width"?: number | null;
-	"--height"?: number | null;
-	"--opacity"?: number | null;
-	"--contrast"?: number | null;
-	"--brightness"?: number | null;
-	"--saturation"?: number | null;
-	"--blur"?: string | null;
-	"--time"?: string | null; // Time in seconds
-	"--padding-x"?: string | null;
-	"--backdrop-blur"?: string | null;
-	"--border-radius"?: string | null;
-	"--background-color"?: string | null; // Hex color code
-};
+	setControlHeight: (height: number) => void;
 
-type BackgroundStyleSettings = {
-	[key in BackgroundMode]: StyleOptions;
-};
+	setBorderThickness: (thickness: number) => void;
 
-type PlaybarStyleSettings = {
-	[key in PlaybarMode]: StyleOptions;
-};
+	setBorderStyle: (style: BorderStyle) => void;
 
-type FontTypes = "title" | "body";
+	setRoundedBorderRadius: (value: number) => void;
 
-type FontSettings = {
-	[key in FontTypes]: {
-		fontFamily: string;
-		url: string;
-	};
-};
+	setBorderColor: (color: string) => void;
 
-// Theme Settings
-type AppSettings = {
-	fontSettings: FontSettings;
-	backgroundMode: BackgroundMode;
-	backgroundStyles: BackgroundStyleSettings;
-	isScrollMode: boolean;
-	isDynamicColor: boolean;
-	grainEffect: GrainEffect;
-	playlistImageMode: PlaylistImageMode;
-	playlistViewMode: PlaylistViewMode;
-	playbarMode: PlaybarMode;
-	playbarStyles: PlaybarStyleSettings;
-	isCustomBackground: boolean;
-	customBackgroundURL: string;
-};
+	updateBackgroundStyle: (mode: keyof BackgroundStyle, key: keyof StyleOptions, value: number | string) => void;
 
-// Settings Actions
-type SettingsActions = {
-	updateFontSettings: (
-		fontType: FontTypes,
-		key: keyof FontSettings[FontTypes],
-		value: string,
-	) => void;
-	setIsCustomBackground: (isCustomBackground: boolean) => void;
-	setCustomBackgroundURL: (customBackgroundURL: string) => void;
-	setFontSettings: (fontSettings: FontSettings) => void;
-	setBackgroundMode: (backgroundMode: BackgroundMode) => void;
-	updateBackgroundStyles: (
-		mode: BackgroundMode,
-		key: keyof BackgroundStyleSettings,
-		value: string,
-	) => void;
-	updatePlaybarStyles: (
-		mode: PlaybarMode,
-		key: keyof PlaybarStyleSettings,
-		value: string,
-	) => void;
-	setIsScrollMode: (isDynamicColor: boolean) => void;
-	setDynamicColor: (isDynamicColor: boolean) => void;
+	setCustomBackgroundOverride: (url: string) => void;
+
+	setFont: (fontType: FontTypes, fontData: FontData) => void;
+
 	setGrainEffect: (grainEffect: GrainEffect) => void;
-	setPlaylistImageMode: (playlistImageMode: PlaylistImageMode) => void;
-	setPlaybarMode: (playbarMode: PlaybarMode) => void;
+
+	setIsScrollMode: (isScrollMode: boolean) => void;
+
+	setPagesBackgroundImageMode: (backgroundImageMode: PlaylistBackgroundImageMode) => void;
+
 	setPlaylistViewMode: (playlistViewMode: PlaylistViewMode) => void;
-	resetSettings: () => void;
+
+	setIsDynamicColor: (isDynamicColor: boolean) => void;
+
+	setPlaybarMode: (mode: PlaybarMode) => void;
+
+	updatePlaybarStyle: (mode: keyof PlaybarStyles, key: keyof StyleOptions, value: number | string) => void;
 };
 
-// Settings Store Type
-type SettingsStore = AppSettings & SettingsActions;
+export type SettingsActions = MainSettingsActions & SubSettingsActions;
 
-export type {
-	FontSettings,
-	FontTypes,
-	BackgroundMode,
-	GrainEffect,
-	PlaybarMode,
-	PlaylistViewMode,
-	PlaylistImageMode,
-	StyleOptions,
-	SettingCardProps,
-	SettingSectionProps,
-	BackgroundStyleSettings,
-	PlaybarStyleSettings,
-	SettingSectionData,
-	AppSettings,
-	SettingsActions,
-	SettingsStore,
-	CustomCSSProperties,
+export type SettingsStore = ThemeSettings & SettingsActions;
+
+// Settings Store End
+
+// Settings Components Start
+export type SectionProps = {
+	title: string;
+	description?: string;
+	children?: ReactNode;
 };
+
+export type BaseSettingCardProps = {
+	title: string;
+	tooltip?: ReactNode;
+	children?: ReactNode;
+	selectedValue?: string | ReactNode;
+	style?: CSSProperties;
+};
+
+export type InputCardProps = BaseSettingCardProps & {
+	type: "input";
+	settings: InputSetting;
+};
+
+export type ToggleCardProps = BaseSettingCardProps & {
+	type: "toggle";
+	settings: ToggleSetting;
+};
+
+export type DropdownCardProps = BaseSettingCardProps & {
+	type: "dropdown";
+	settings: DropdownSetting;
+};
+
+export type ButtonCardProps = BaseSettingCardProps & {
+	type: "button";
+	settings: ButtonProps;
+};
+
+export type NormalCardProps = BaseSettingCardProps & {
+	type: "normal";
+	children: ReactNode;
+	settings?: null;
+};
+
+export type SettingCardProps = InputCardProps | ToggleCardProps | DropdownCardProps | ButtonCardProps | NormalCardProps;
+
+export type SettingsCardSection = {
+	id: string;
+	sectionName?: string;
+	conditionalRender: boolean;
+	cardProps: SettingCardProps;
+};
+
+export type SettingCardMap = SettingsCardSection[];
+// Settings Components End

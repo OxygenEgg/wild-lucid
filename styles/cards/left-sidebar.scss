@@ -1,0 +1,32 @@
+.Root__nav-bar,
+#Desktop_LeftSidebar_Id {
+  @include bg-none;
+
+  .main-navBar-mainNav {
+    @include bg-none;
+    .main-yourLibraryX-entryPoints {
+      background: $left-sidebar-bg;
+      transition: width 0.35s ease;
+      @include default-border-with-radius;
+    }
+
+    .main-yourLibraryX-libraryItemContainer {
+      padding-bottom: $root-padding-bottom;
+    }
+  }
+
+  .main-rootlist-wrapper {
+    .main-yourLibraryX-listItem {
+      & > div {
+        border: $transparent-border;
+        &.BoxComponent-group-listRow-tinted-isInteractive-minBlockSize_56px-padding_8px {
+          @include default-border-with-radius;
+        }
+      }
+    }
+  }
+
+  .RHRitk6QC3rvuG24RAdj {
+    @include box-shadow-to-bottom;
+  }
+}

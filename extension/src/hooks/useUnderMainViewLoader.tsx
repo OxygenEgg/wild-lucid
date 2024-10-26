@@ -1,10 +1,10 @@
-import PlaylistViewManager from "@/components/playlistViews/PlaylistViewManager";
-import React from "react";
+import PlaylistViewManager from "@/components/state/PlaylistViewManager";
+import React, { useEffect, useRef } from "react";
 
 export const useUnderMainViewLoader = () => {
-	const underMainViewRef = React.useRef<HTMLElement | null>(null);
+	const underMainViewRef = useRef<HTMLElement | null>(null);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const setUnderMainView = () => {
 			if (document.getElementById("lucid-under-main-view")) {
 				return;
@@ -22,9 +22,7 @@ export const useUnderMainViewLoader = () => {
 			underMainViewRef.current = newUnderMainView;
 
 			if (underMainViewRef.current) {
-				Spicetify.ReactDOM.createRoot(underMainViewRef.current).render(
-					<PlaylistViewManager />,
-				);
+				Spicetify.ReactDOM.createRoot(underMainViewRef.current).render(<PlaylistViewManager />);
 			}
 		};
 
