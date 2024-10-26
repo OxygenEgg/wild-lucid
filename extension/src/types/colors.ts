@@ -28,16 +28,6 @@ export type ColorPalette = {
 	tertiary: Color;
 };
 
-export type WildColorPalette = {
-	accent: Color;
-	button: Color;
-	"progress-bar": Color;
-	"button-active": Color;
-	primary: Color;
-	secondary: Color;
-	tertiary: Color;
-};
-
 export type ExtractedColors = {
 	baseColor: Color;
 	secondaryColor: Color;

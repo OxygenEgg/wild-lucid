@@ -1,16 +1,16 @@
 import { useLucidStore } from "@/store/useLucidStore";
 import { useSettingsStore } from "@/store/useSettingsStore";
-import {
-	applyExtractedColorsToCSS,
-	resetCSSColorVariables,
-} from "@/utils/dynamicColorUtils";
-import { logError, logInfo } from "@/utils/logUtils";
-import React from "react";
+import { applyExtractedColorsToCSS, resetCSSColorVariables } from "@/utils/dynamicColorUtils";
+import { logDebug, logError, logInfo } from "@/utils/logUtils";
+import React, { useEffect, useRef } from "react";
 
-const useDynamicBackground = () => {
-	// FIXME: why does setting this to true make it work???
-	// const { isDynamicColor } = useSettingsStore();
-	const isDynamicColor = true;
+const ColorManager = () => {
+	logDebug("Render <ColorManager />");
+
+	const {
+		colorSettings: { isDynamicColor },
+	} = useSettingsStore();
+
 	const { artworkData } = useLucidStore();
 	const styleRef = useRef<HTMLStyleElement | null>(null);
 	const prevArtURL = useRef<string | null>(null);
