@@ -1735,28 +1735,29 @@ kbd,
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: 0.5rem;
 }
-.Root__lyrics-cinema .FUYNhisXTCmbzt9IDxnT,
-.Root__lyrics-cinema .lyrics-lyricsContainer-LyricsContainer {
+
+.FUYNhisXTCmbzt9IDxnT,
+.lyrics-lyrics-container,
+.lyrics-lyricsContainer-LyricsContainer {
 	background-color: transparent !important;
 	--lyrics-active-color: var(--spice-rgb-text);
 	--lyrics-color-active: var(--spice-rgb-text);
 	--lyrics-color-inactive: rgba(var(--lyrics-active-color), 0.2) !important;
 	--lyrics-color-shadow: rgba(var(--lyrics-active-color), 0.25) !important;
-	--lyrics-color-passed: rgba(var(--lyrics-active-color), 0.5) !important;
+	--lyrics-color-passed: rgba(var(--lyrics-active-color), 0.75) !important;
 	--lyrics-color-background: transparent !important;
 	--lyrics-color-messaging: rgb(0, 0, 0) !important;
-	--lyrics-blur-coefficent: 0.05rem;
-	--lyrics-shadow-coefficent: 0.5rem;
-	--lyrics-scale-coefficent: 0.01;
-	--scale-constant: 1;
 }
-
-.lyrics-lyrics-background {
+.FUYNhisXTCmbzt9IDxnT .lyrics-lyrics-background,
+.lyrics-lyrics-container .lyrics-lyrics-background,
+.lyrics-lyricsContainer-LyricsContainer .lyrics-lyrics-background {
 	background: none !important;
 }
-
-.lyrics-lyricsContent-text {
+.FUYNhisXTCmbzt9IDxnT .lyrics-lyricsContent-text,
+.lyrics-lyrics-container .lyrics-lyricsContent-text,
+.lyrics-lyricsContainer-LyricsContainer .lyrics-lyricsContent-text {
 	font-weight: 700;
+	text-align: center;
 }
 
 .Root__main-view {
