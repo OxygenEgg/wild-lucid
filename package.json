@@ -18,11 +18,9 @@
 	"author": "Sanoojes",
 	"license": "MIT",
 	"devDependencies": {
-		"sass": "^1.79.5",
-		"spicetify-creator": "^1.0.17"
-	},
-	"dependencies": {
 		"canvas": "^2.11.2",
+		"sass": "^1.79.5",
+		"spicetify-creator": "^1.0.17",
 		"zustand": "^5.0.1"
 	}
 }
