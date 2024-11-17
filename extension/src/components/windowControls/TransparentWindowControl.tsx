@@ -25,13 +25,22 @@ const TransparentWindowControl = () => {
         setWindowControlsHeight(controlHeight);
 
         if (!isCustomControls && !isLightModeEnabled) {
-          const normalHeight = isSpotifyV16Above ? 32 : 64;
-          const height = normalHeight / windowZoom;
+          const normalHeight = controlHeight || (isSpotifyV16Above ? 32 : 64);
           const controlTop = isSpotifyV16Above
             ? (controlHeight / windowZoom -
                 Math.min(32 / windowZoom, controlHeight / windowZoom)) /
               2
             : 0;
+          const height = normalHeight / windowZoom - controlTop * 2;
+
+          window.document.body.style.setProperty(
+            "--top-bar-padding-start",
+            `${(controlHeight <= 16 ? 8 : 64) / windowZoom}px`
+          );
+          window.document.body.style.setProperty(
+            "--top-bar-padding-end",
+            `${(controlHeight <= 16 ? 8 : 135) / windowZoom}px`
+          );
 
           const newStyle: CSSProperties = {
             position: "fixed",
@@ -41,6 +50,7 @@ const TransparentWindowControl = () => {
             width: `${135 / windowZoom}px`,
             WebkitBackdropFilter: "brightness(2.12)",
             backdropFilter: "brightness(2.12)",
+            pointerEvents: "none",
             zIndex: "var(--above-main-and-now-playing-view-grid-area, 6)",
           };
 

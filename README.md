@@ -76,7 +76,7 @@
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-iex "& { $(iwr -useb 'https://sanooj.is-a.dev/Spicetify-Lucid/install/Lucid.ps1') }"
+iex "& { $(iwr -useb 'https://cdn.jsdelivr.net/gh/sanoojes/Spicetify-Lucid@refs/heads/main/install/Lucid.ps1') }"
 ```
 
 #### **Linux/macOS (Bash)**
@@ -151,7 +151,7 @@ spicetify apply
   spicetify apply
   ```
 
-Available schemes: `dark`, `light`, `comfy`, `macos`, `coffee`, `violet`, `dracula`, `biscuit`, `cozytile`, `rosepine`, `darkgreen`, `greenland`, `dark-bloom`, `dark-fluent`, `dracula-pro`, `cosmic-dusk`, `midnight-slate`, `nocturne-coast`, `catppuccin-mocha`, `midnight-catppuccin`, `catppuccin-macchiato`, `catppuccin-darkrose`, `abyss`, `vesper`.
+Available schemes: `dark`, `light`, `comfy`, `macos`, `coffee`, `violet`, `dracula`, `biscuit`, `cozytile`, `rosepine`, `darkgreen`, `greenland`, `dark-bloom`, `dark-fluent`, `dracula-pro`, `cosmic-dusk`, `midnight-slate`, `nocturne-coast`, `catppuccin-mocha`, `midnight-catppuccin`, `catppuccin-macchiato`, `catppuccin-darkrose`, `abyss`, `vesper` , `night-owl`.
 
 - If you installed via Marketplace, the color scheme can be changed directly in the theme options.
 

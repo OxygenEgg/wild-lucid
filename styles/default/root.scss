@@ -89,6 +89,11 @@ section[data-testid*="playlist"] {
   margin-top: 0;
 }
 
+// WILD artist page artist element left-margin fix
+.iWTIFTzhRZT0rCD0_gOK {
+  margin-left: var(--content-spacing);
+}
+
 .pQmF4tvRpUeLWgPKUcW7,
 .main-userWidget-box,
 .main-avatar-avatar {
@@ -112,10 +117,8 @@ section[data-testid*="playlist"] {
 .spotify__container--is-desktop.spotify__os--is-windows {
   .control-nav .main-topBar-container,
   .global-nav .Root__globalNav {
-    --top-bar-padding-start: calc(64px / var(--zoom));
-    --top-bar-padding-end: calc(144px / var(--zoom));
-    padding-inline: var(--top-bar-padding-start, 64px)
-      var(--top-bar-padding-end, 144px);
+    padding-inline: var(--top-bar-padding-start, calc(64px / var(--zoom)))
+      var(--top-bar-padding-end, calc(144px / var(--zoom)));
   }
 }
 
@@ -163,4 +166,78 @@ section[data-testid*="playlist"] {
 .main-dropDown-dropDown {
   background-color: var(--spice-main);
   @include default-border-with-radius;
+}
+.progress-bar {
+  &__slider {
+    background-color: var(--spice-accent);
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 0 0 6px rgba(var(--spice-rgb-card), 0.7);
+    }
+  }
+
+  &--isDragging {
+    .progress-bar__slider {
+      box-shadow: 0 0 0 4px rgba(var(--spice-rgb-card), 0.7);
+    }
+  }
+
+  .volume-bar {
+    &__slider-container {
+      .progress-bar__slider {
+        &:hover {
+          box-shadow: 0 0 0 6px rgba(var(--spice-rgb-card), 0.7);
+        }
+      }
+    }
+  }
+}
+
+@property --progress-bar-transform {
+  inherits: true;
+  initial-value: 0%;
+  syntax: "<percentage>";
+}
+
+.progress-bar {
+  --fg-color: var(--spice-button);
+  --is-active-fg-color: var(--spice-button-active);
+
+  transition: --progress-bar-transform 1s linear !important;
+
+  &__slider {
+    background-color: var(--spice-accent);
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 0 0 6px rgba(var(--spice-rgb-card), 0.7);
+    }
+  }
+
+  &--isDragging {
+    transition-duration: 150ms !important;
+
+    .progress-bar__slider {
+      box-shadow: 0 0 0 4px rgba(var(--spice-rgb-card), 0.7);
+    }
+  }
+}
+
+.volume-bar__slider-container {
+  .progress-bar__slider {
+    &:hover {
+      box-shadow: 0 0 0 6px rgba(var(--spice-rgb-card), 0.7);
+    }
+  }
+}
+
+kbd,
+.c4hmXDjs2Dv8n3VCLz1g {
+  background-color: rgba(var(--spice-rgb-selected-row), 0.1);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  @include default-border;
 }
