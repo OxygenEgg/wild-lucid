@@ -258,9 +258,12 @@ max-width: 10rem;
     display: none !important;
   }
   
-  -webkit-mask-image: var(--prev-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid/blob/main/assets/icons/fullscreen-arrows.svg"));
-  mask-image: var(--prev-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid/blob/main/assets/icons/fullscreen-arrows.svg"));
-  background-color: var(--spice-text) !important;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  background-color: currentColor !important;
+  -webkit-mask-image: var(--fullscreen-noarrows-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid@main/assets/icons/fullscreen-noarrows.svg"));
+  mask-image: var(--fullscreen-noarrows-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid@main/assets/icons/fullscreen-noarrows.svg"));
 }
 `;
 };

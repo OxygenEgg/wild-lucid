@@ -212,8 +212,11 @@ max-width: 10rem;
     display: none !important;
   }
   
-  -webkit-mask-image: var(--prev-icon, url("https://cdn.jsdelivr.net/gh/sanoojes/Spicetify-Lucid@refs/heads/main/assets/icons/fullscreen-arrows.svg"));
-  mask-image: var(--prev-icon, url("https://cdn.jsdelivr.net/gh/sanoojes/Spicetify-Lucid@refs/heads/main/assets/icons/fullscreen-arrows.svg"));
-  background-color: var(--spice-text) !important;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  background-color: currentColor !important;
+  -webkit-mask-image: var(--fullscreen-noarrows-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid@main/assets/icons/fullscreen-noarrows.svg"));
+  mask-image: var(--fullscreen-noarrows-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid@main/assets/icons/fullscreen-noarrows.svg"));
 }
 `}})(),(()=>{let e=document.getElementById("lucid-background-style");e||((e=document.createElement("style")).id="lucid-background-style",document.head.appendChild(e));var t=document.querySelector("#lyrics-cinema"),t=(t&&ra(t,"#lyrics-cinema .lyrics-lyrics-background, #lyrics-cinema .lyrics-lyrics-container",e,5),document.querySelector("#main .Root > div:last-child"));t&&ra(t,'.Root div[data-testid="fullscreen-mode-container"], .Root .npv-main-container',e,15)})()},[]),U.default.createElement(U.default.Fragment,null,U.default.createElement("div",{id:"background-container",className:"background-container",style:{containerType:"normal"}},U.default.createElement(yt,null)),U.default.createElement(et,null,U.default.createElement("div",{id:"modal-container",className:"modal-container",style:{containerType:"normal"}},U.default.createElement(it,null),U.default.createElement(oa,null))),U.default.createElement("div",{id:"state"},U.default.createElement(ta,null)),U.default.createElement(ce,null))),ca=e(t()),da=async function(){try{for(;!(null!=Spicetify&&Spicetify.showNotification&&null!=Spicetify&&Spicetify.Player&&null!=Spicetify&&Spicetify.React&&null!=Spicetify&&Spicetify.Platform);)await new Promise(e=>setTimeout(e,100));let e=document.getElementById("lucid-main");var t;e||((e=document.createElement("div")).id="lucid-main",null!=(t=document.getElementById("main"))&&t.prepend(e)),e&&!e.hasChildNodes()&&Spicetify.ReactDOM.createRoot(e).render(ca.default.createElement(sa,null)),console.log("%c Lucid ignited! 🚀","font-weight: bold; font-size: 1.25rem; color: #2196F3; padding: 0.5rem 0;")}catch(e){Spicetify.showNotification("[Lucid] Error Occurred: "+(e instanceof Error?e.message:e),!0),w(e)}};(async()=>{await da()})()})();

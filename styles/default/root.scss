@@ -94,6 +94,26 @@ section[data-testid*="playlist"] {
   margin-left: var(--content-spacing);
 }
 
+// WILD hide BeautifulLyricsFullscreenButton
+#BeautifulLyricsFullscreenButton {
+  display:none;
+}
+
+// WILD
+#fs-button {
+  background-color: transparent;
+  border: none;
+  color: rgba(var(--spice-rgb-selected-row), .7);
+  height: 32px;
+  position: relative;
+  width: 32px;
+
+  :hover {
+    color: var(--spice-text);
+    transform: scale(1.04);
+  }
+}
+
 .pQmF4tvRpUeLWgPKUcW7,
 .main-userWidget-box,
 .main-avatar-avatar {
