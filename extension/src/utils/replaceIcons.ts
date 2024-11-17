@@ -252,5 +252,15 @@ display: none !important;
 max-width: 10rem;
   }
 }
+
+#fs-button svg {
+  path {
+    display: none !important;
+  }
+  
+  -webkit-mask-image: var(--prev-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid/blob/main/assets/icons/fullscreen-arrows.svg"));
+  mask-image: var(--prev-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid/blob/main/assets/icons/fullscreen-arrows.svg"));
+  background-color: var(--spice-text) !important;
+}
 `;
 };
