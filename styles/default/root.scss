@@ -102,10 +102,36 @@ section[data-testid*="playlist"] {
 .QeUrkqvHAbXSveKN2wCu,
 .MxmW8QkHqHWtuhO589PV,
 .x-entityImage-circle,
+.main-entityHeader-image,
 .x-filterBox-expandButton,
 .x-filterBox-expandButton:focus,
 .x-filterBox-expandButton:hover {
   border-radius: $border-radius-avatar;
+}
+.view-homeShortcutsGrid-PlayButtonContainer {
+  border: none;
+  border-radius: 0px;
+  height: 16px;
+  width: 16px;
+}
+
+.Root__right-sidebar .KYkSwfV1FCtD15TMChbH {
+  height: 24px;
+  width: 24px;
+}
+
+.view-homeShortcutsGrid-PlayButtonContainer:has(
+    .view-homeShortcutsGrid-equaliser[src*="gif"]
+  ),
+.Root__right-sidebar .KYkSwfV1FCtD15TMChbH {
+  background-color: var(--spice-accent);
+  -webkit-mask-image: $equalizer-svg;
+  mask-image: $equalizer-svg;
+
+  img,
+  svg {
+    visibility: hidden;
+  }
 }
 
 // Windows Specific Styles
