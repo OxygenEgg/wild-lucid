@@ -140,7 +140,7 @@ export function applyColorPaletteToCSS(styleElement: HTMLElement, colorPalette: 
 	styleElement.textContent = styleContent;
 }
 
-export async function resetCSSColorVariables(styleElement: HTMLElement, dynamicColorMode: DynamicColorMode) {
+export function resetCSSColorVariables(styleElement: HTMLElement, dynamicColorMode: DynamicColorMode) {
     if (dynamicColorMode === "full") {
 		styleElement.textContent =
 			":root{\nwill-change: --spice-main,--spice-rgb-main,--spice-sidebar,--spice-rgb-sidebar,--spice-card,--spice-rgb-card,--spice-player,--spice-rgb-player,--spice-accent,--spice-rgb-accent,--spice-highlight,--spice-rgb-highlight,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-text,--spice-rgb-text,--spice-progress-bar,--spice-rgb-progress-bar,--spice-subtext,--spice-rgb-subtext,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: all 0.3s ease-in-out;\n}";
