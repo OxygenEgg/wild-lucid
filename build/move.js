@@ -5,7 +5,7 @@ import path from "node:path";
 export function applySpicetifyTheme(
 	srcFolder = "src",
 	themeName = "Lucid",
-	spicetifyPath = process.env.SPICETIFY_PATH || "C:/Users/Sachu/AppData/Roaming/spicetify/",
+	spicetifyPath = process.env.SPICETIFY_PATH || "C:/Users/Marcel/AppData/Roaming/spicetify/",
 ) {
 	const destinationFolder = path.join(spicetifyPath, "Themes", themeName);
 
