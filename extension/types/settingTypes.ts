@@ -1,7 +1,7 @@
 import type { BackgroundMode, BackgroundSettings, BackgroundStyle } from "@/types/background";
 import type { BorderSettings, BorderStyle } from "@/types/border";
 import type { ButtonProps } from "@/types/button";
-import type { ColorSettings } from "@/types/colors";
+import type { ColorSettings, DynamicColorMode } from "@/types/colors";
 import type { DropdownSetting } from "@/types/dropdown";
 import type { FontData, FontTypes } from "@/types/font";
 import type { GrainEffect } from "@/types/grains";
@@ -74,6 +74,8 @@ export type SubSettingsActions = {
 	setPlaylistViewMode: (playlistViewMode: PlaylistViewMode) => void;
 
 	setIsDynamicColor: (isDynamicColor: boolean) => void;
+
+	setDynamicColorMode: (dynamicColorMode: DynamicColorMode) => void;
 
 	setPlaybarMode: (mode: PlaybarMode) => void;
 

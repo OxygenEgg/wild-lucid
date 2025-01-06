@@ -101,6 +101,7 @@ export const DEFAULT_APP_SETTINGS: ThemeSettings = {
 	},
 	colorSettings: {
 		isDynamicColor: false,
+		dynamicColorMode: "full",
 	},
 	playbarSettings: {
 		mode: "default",

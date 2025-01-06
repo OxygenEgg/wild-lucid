@@ -1,4 +1,4 @@
-import type { BackgroundMode } from "@/types/background";
+import { BackgroundMode } from "@/types/background";
 import type { BorderRadius, BorderStyle } from "@/types/border";
 import type { DropdownOption } from "@/types/dropdown";
 import type { GrainEffect } from "@/types/grains";
@@ -6,11 +6,17 @@ import type { SettingsPositions } from "@/types/main";
 import type { NpvMode, NpvPosition } from "@/types/npv";
 import type { PlaylistBackgroundImageMode, PlaylistViewMode } from "@/types/pages";
 import type { PlaybarMode } from "@/types/playbar";
+import { DynamicColorMode } from "@/types/colors";
 
 export const BACKGROUND_MODE_OPTIONS: DropdownOption<BackgroundMode>[] = [
 	{ label: "Animated", value: "animated" },
 	{ label: "Static", value: "static" },
 	{ label: "Solid", value: "solid" },
+];
+
+export const DYNAMIC_COLOR_MODE_OPTIONS: DropdownOption<DynamicColorMode>[] = [
+	{ label: "All elements", value: "full" },
+	{ label: "Accent color only", value: "basic" },
 ];
 
 export const PLAYBAR_MODE_OPTIONS: DropdownOption<PlaybarMode>[] = [

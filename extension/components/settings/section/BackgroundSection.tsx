@@ -1,5 +1,5 @@
 import Section from "@/components/settings/ui/SettingSection";
-import { BACKGROUND_MODE_OPTIONS } from "@/constants/dropdown";
+import { BACKGROUND_MODE_OPTIONS, DYNAMIC_COLOR_MODE_OPTIONS } from "@/constants/dropdown";
 import { addToast } from "@/services/toastService";
 import { useImageStore } from "@/store/useImageStore";
 import { useSettingsStore } from "@/store/useSettingsStore";
@@ -10,12 +10,14 @@ import { getStyleInputMap } from "@/utils/getStyleInputMap";
 import { logDebug } from "@/utils/logUtils";
 import { renderCards } from "@/utils/render/renderCards";
 import React, { useEffect, useState } from "react";
+import { DynamicColorMode } from "@/types/colors";
 
 const BackgroundSection = () => {
 	const {
 		backgroundSettings: { mode, styles, customBackgroundOverride },
-		colorSettings: { isDynamicColor },
+		colorSettings: { isDynamicColor, dynamicColorMode },
 		setBackgroundMode,
+		setDynamicColorMode,
 		updateBackgroundStyle,
 		setIsDynamicColor,
 		setCustomBackgroundOverride,
@@ -29,6 +31,13 @@ const BackgroundSection = () => {
 	const onBackgroundModeChange = (value: string) => {
 		setSelectedMode(value);
 		setBackgroundMode(value as BackgroundMode);
+	};
+
+	const [selectedDynamicColorMode, setSelectedDynamicColorMode] = useState<string>(dynamicColorMode);
+
+	const onDynamicColorModeChange = (value: string) =>  {
+		setSelectedDynamicColorMode(value);
+		setDynamicColorMode(value as DynamicColorMode);
 	};
 
 	const BACKGROUND_SETTINGS_CARDS: SettingCardMap = [
@@ -181,6 +190,21 @@ const BackgroundSection = () => {
 							addToast("Enabled Dynamic Color.");
 						}
 					},
+				},
+			},
+		},
+		{
+			id: "dynamicColorMode",
+			conditionalRender: isDynamicColor,
+			cardProps: {
+				title: "Dynamic Color Mode",
+				type: "dropdown",
+				tooltip: "Choose whether to adjust the color of all elements or just the accent color.",
+				settings: {
+					placeholder: selectedDynamicColorMode,
+					selectedValue: selectedDynamicColorMode,
+					options: DYNAMIC_COLOR_MODE_OPTIONS,
+					onChange: onDynamicColorModeChange,
 				},
 			},
 		},

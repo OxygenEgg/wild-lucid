@@ -1,8 +1,11 @@
 export type ColorSettings = {
 	isDynamicColor: boolean;
+	dynamicColorMode: DynamicColorMode;
 	colorPalette?: ColorPalette;
 	overrideColorPalette?: ColorPalette;
 };
+
+export type DynamicColorMode = "full" | "basic";
 
 export type Color = {
 	r: number;
@@ -27,6 +30,16 @@ export type ColorPalette = {
 	secondary: Color;
 	tertiary: Color;
 };
+
+export type BasicColorPalette = {
+	accent: Color;
+	button: Color;
+	"progress-bar": Color;
+	"button-active": Color;
+	primary: Color;
+	secondary: Color;
+	tertiary: Color;
+}
 
 export type ExtractedColors = {
 	baseColor: Color;

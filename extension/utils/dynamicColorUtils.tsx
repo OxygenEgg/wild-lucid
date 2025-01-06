@@ -1,4 +1,4 @@
-import type { Color, ColorPalette, ExtractedColors } from "@/types/colors";
+import type { BasicColorPalette, Color, ColorPalette, DynamicColorMode, ExtractedColors } from "@/types/colors";
 import { contrastRatio, darkenColor, lightenColor, rgbToHex } from "@/utils/colorUtils";
 import { logError } from "@/utils/logUtils";
 import { createCanvas, loadImage } from "canvas";
@@ -78,11 +78,12 @@ async function extractDominantColorsFromImage(imageUrl: string): Promise<Extract
 	}
 }
 
-let colorExtractionTimeout: number | null = null;
+let colorExtractionTimeout: ReturnType<typeof setTimeout> | null = null;
 
 export async function applyExtractedColorsToCSS(
 	styleElement: HTMLElement,
 	isDynamicColor: boolean,
+	dynamicColorMode: DynamicColorMode,
 	currentArtUrl: string,
 ): Promise<ExtractedColors | null> {
 	if (!isDynamicColor || !currentArtUrl) return null;
@@ -102,9 +103,9 @@ export async function applyExtractedColorsToCSS(
 					return;
 				}
 
-				const colorPalette = generateDarkModePalette(extractedColors);
+				const colorPalette = generateDarkModePalette(extractedColors, dynamicColorMode);
 
-				applyColorPaletteToCSS(styleElement, colorPalette);
+				applyColorPaletteToCSS(styleElement, colorPalette, dynamicColorMode);
 
 				resolve(extractedColors);
 			} catch (error) {
@@ -115,39 +116,63 @@ export async function applyExtractedColorsToCSS(
 	});
 }
 
-export function applyColorPaletteToCSS(styleElement: HTMLElement, colorPalette: ColorPalette) {
+export function applyColorPaletteToCSS(styleElement: HTMLElement, colorPalette: ColorPalette | BasicColorPalette, dynamicColorMode: DynamicColorMode) {
 	let styleContent = `:root {${Object.entries(colorPalette)
 		.map(
 			([name, color]) =>
 				`\n--spice-${name}: ${color.hex} !important;\n--spice-rgb-${name}: ${color.r}, ${color.g}, ${color.b} !important;`,
 		)
 		.join("")}\n}`;
-	styleContent +=
-		":root{\nwill-change: --spice-main,--spice-rgb-main,--spice-sidebar,--spice-rgb-sidebar,--spice-card,--spice-rgb-card,--spice-player,--spice-rgb-player,--spice-accent,--spice-rgb-accent,--spice-highlight,--spice-rgb-highlight,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-text,--spice-rgb-text,--spice-progress-bar,--spice-rgb-progress-bar,--spice-subtext,--spice-rgb-subtext,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: all 0.3s ease-in-out;\n}";
-
+	if (dynamicColorMode === "full") {
+		styleContent +=
+			":root{\nwill-change: --spice-main,--spice-rgb-main,--spice-sidebar,--spice-rgb-sidebar,--spice-card,--spice-rgb-card,--spice-player,--spice-rgb-player,--spice-accent,--spice-rgb-accent,--spice-highlight,--spice-rgb-highlight,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-text,--spice-rgb-text,--spice-progress-bar,--spice-rgb-progress-bar,--spice-subtext,--spice-rgb-subtext,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: var(--spice-transition, all 0.3s ease-in-out);\n}";
+	} else {
+		styleContent +=
+			":root{\nwill-change: --spice-accent,--spice-rgb-accent,--spice-button,--spice-rgb-button,--spice-progress-bar,--spice-rgb-progress-bar,--spice-button-active,--spice-rgb-button-active,--spice-progress-bar,--spice-rgb-progress-bar,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: var(--spice-transition, all 0.3s ease-in-out);\n}";
+	}
 	styleElement.textContent = styleContent;
 }
 
-export async function resetCSSColorVariables(styleElement: HTMLElement) {
-	styleElement.textContent =
-		":root{\nwill-change: --spice-main,--spice-rgb-main,--spice-sidebar,--spice-rgb-sidebar,--spice-card,--spice-rgb-card,--spice-player,--spice-rgb-player,--spice-accent,--spice-rgb-accent,--spice-highlight,--spice-rgb-highlight,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-text,--spice-rgb-text,--spice-progress-bar,--spice-rgb-progress-bar,--spice-subtext,--spice-rgb-subtext,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: all 0.3s ease-in-out;\n}";
+export async function resetCSSColorVariables(styleElement: HTMLElement, dynamicColorMode: DynamicColorMode) {
+    if (dynamicColorMode === "full") {
+		styleElement.textContent =
+			":root{\nwill-change: --spice-main,--spice-rgb-main,--spice-sidebar,--spice-rgb-sidebar,--spice-card,--spice-rgb-card,--spice-player,--spice-rgb-player,--spice-accent,--spice-rgb-accent,--spice-highlight,--spice-rgb-highlight,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-text,--spice-rgb-text,--spice-progress-bar,--spice-rgb-progress-bar,--spice-subtext,--spice-rgb-subtext,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: all 0.3s ease-in-out;\n}";
+	} else {
+		styleElement.textContent =
+			":root{\nwill-change: --spice-accent,--spice-rgb-accent,--spice-button,--spice-rgb-button,--spice-progress-bar,--spice-rgb-progress-bar,--spice-button-active,--spice-rgb-button-active,--spice-progress-bar,--spice-rgb-progress-bar,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;\ntransition: all 0.3s ease-in-out;\n}";
+	}
 }
 
-function generateDarkModePalette({ baseColor, secondaryColor, tertiaryColor }: ExtractedColors): ColorPalette {
-	return {
-		main: darkenColor(secondaryColor, 0.4),
-		sidebar: darkenColor(secondaryColor, 0.5),
-		card: darkenColor(tertiaryColor, 0.5),
-		player: darkenColor(secondaryColor, 0.6),
-		"progress-bar": lightenColor(secondaryColor, 0.6),
-		accent: lightenColor(baseColor, 0.4),
-		highlight: lightenColor(secondaryColor, 0.2),
-		button: lightenColor(tertiaryColor, 0.4),
-		"button-active": lightenColor(tertiaryColor, 0.4),
-		text: lightenColor(baseColor, 0.9),
-		subtext: lightenColor(secondaryColor, 0.9),
-		primary: baseColor,
-		secondary: secondaryColor,
-		tertiary: tertiaryColor,
-	};
+function generateDarkModePalette(
+	{ baseColor, secondaryColor, tertiaryColor }: ExtractedColors,
+	dynamicColorMode: DynamicColorMode,
+): ColorPalette | BasicColorPalette {
+	if (dynamicColorMode === "full") {
+		return {
+			main: darkenColor(secondaryColor, 0.4),
+			sidebar: darkenColor(secondaryColor, 0.5),
+			card: darkenColor(tertiaryColor, 0.5),
+			player: darkenColor(secondaryColor, 0.6),
+			"progress-bar": lightenColor(secondaryColor, 0.6),
+			accent: lightenColor(baseColor, 0.4),
+			highlight: lightenColor(secondaryColor, 0.2),
+			button: lightenColor(tertiaryColor, 0.4),
+			"button-active": lightenColor(tertiaryColor, 0.4),
+			text: lightenColor(baseColor, 0.9),
+			subtext: lightenColor(secondaryColor, 0.9),
+			primary: baseColor,
+			secondary: secondaryColor,
+			tertiary: tertiaryColor,
+		};
+	} else {
+		return {
+			accent: lightenColor(baseColor, 0.4),
+			button: lightenColor(tertiaryColor, 0.4),
+			"progress-bar": lightenColor(secondaryColor, 0.6),
+			"button-active": lightenColor(tertiaryColor, 0.4),
+			primary: baseColor,
+			secondary: secondaryColor,
+			tertiary: tertiaryColor,
+		};
+	}
 }

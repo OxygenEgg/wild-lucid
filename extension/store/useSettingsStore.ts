@@ -217,6 +217,11 @@ export const useSettingsStore = create(
 					},
 				})),
 
+			setDynamicColorMode: (dynamicColorMode) =>
+				set((state) => ({
+					colorSettings: { ...state.colorSettings, dynamicColorMode },
+				})),
+
 			setFont: (fontType, fontData) =>
 				set((state) => ({
 					interfaceSettings: {
