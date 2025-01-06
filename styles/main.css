@@ -78,27 +78,6 @@ section[data-testid*=playlist] {
   margin-top: 0;
 }
 
-.iWTIFTzhRZT0rCD0_gOK {
-  margin-left: var(--content-spacing);
-}
-
-#BeautifulLyricsFullscreenButton {
-  display: none;
-}
-
-#fs-button {
-  background-color: transparent;
-  border: none;
-  color: rgba(var(--spice-rgb-selected-row), 0.7);
-  height: 32px;
-  position: relative;
-  width: 32px;
-}
-#fs-button :hover {
-  color: var(--spice-text);
-  transform: scale(1.04);
-}
-
 .pQmF4tvRpUeLWgPKUcW7,
 .main-userWidget-box,
 .main-avatar-avatar {
@@ -216,6 +195,34 @@ kbd,
   box-shadow: none;
   border: var(--border-thickness) var(--border-style, solid) var(--border-color, rgba(var(--spice-rgb-text), 0.125));
   box-shadow: none;
+}
+
+.iWTIFTzhRZT0rCD0_gOK {
+  margin-left: var(--content-spacing);
+}
+
+#BeautifulLyricsFullscreenButton {
+  display: none;
+}
+
+#fs-button {
+  background-color: transparent;
+  border: none;
+  color: rgba(var(--spice-rgb-selected-row), 0.7);
+  height: 32px;
+  position: relative;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#fs-button :hover {
+  color: var(--spice-text);
+  transform: scale(1.04);
+}
+
+.LoadingLyricsCard.Loading {
+  display: none !important;
 }
 
 :root {

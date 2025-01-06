@@ -89,31 +89,6 @@ section[data-testid*="playlist"] {
   margin-top: 0;
 }
 
-// WILD artist page artist element left-margin fix
-.iWTIFTzhRZT0rCD0_gOK {
-  margin-left: var(--content-spacing);
-}
-
-// WILD hide BeautifulLyricsFullscreenButton
-#BeautifulLyricsFullscreenButton {
-  display:none;
-}
-
-// WILD
-#fs-button {
-  background-color: transparent;
-  border: none;
-  color: rgba(var(--spice-rgb-selected-row), .7);
-  height: 32px;
-  position: relative;
-  width: 32px;
-
-  :hover {
-    color: var(--spice-text);
-    transform: scale(1.04);
-  }
-}
-
 .pQmF4tvRpUeLWgPKUcW7,
 .main-userWidget-box,
 .main-avatar-avatar {
@@ -260,4 +235,37 @@ kbd,
   -webkit-box-shadow: none;
   box-shadow: none;
   @include default-border;
+}
+
+// WILD artist page artist element left-margin fix
+.iWTIFTzhRZT0rCD0_gOK {
+  margin-left: var(--content-spacing);
+}
+
+// WILD hide BeautifulLyricsFullscreenButton
+#BeautifulLyricsFullscreenButton {
+  display:none;
+}
+
+// WILD
+#fs-button {
+  background-color: transparent;
+  border: none;
+  color: rgba(var(--spice-rgb-selected-row), .7);
+  height: 32px;
+  position: relative;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  :hover {
+    color: var(--spice-text);
+    transform: scale(1.04);
+  }
+}
+
+// TODO: beautify this when lyrics fix is there
+.LoadingLyricsCard.Loading {
+  display: none !important;
 }
