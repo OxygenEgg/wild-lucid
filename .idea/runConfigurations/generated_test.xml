@@ -1,0 +1,15 @@
+
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="test" type="js.build_tools.npm" factoryName="npm" singleton="true">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts>
+      <script value="test" />
+    </scripts>
+    <node-interpreter value="C:\Program Files\nodejs\node.exe" />
+    <envs>
+
+    </envs>
+    <method />
+  </configuration>
+</component>

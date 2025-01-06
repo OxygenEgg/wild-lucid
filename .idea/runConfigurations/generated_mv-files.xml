@@ -1,0 +1,9 @@
+
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="mv-files" type="NodeJSConfigurationType" factoryName="Node.js" node-parameters="build/move.js" working-dir="$PROJECT_DIR$">
+    <envs>
+
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
