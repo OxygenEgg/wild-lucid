@@ -5,6 +5,7 @@ import { useSettingsStore } from "@/store/useSettingsStore";
 import { applyExtractedColorsToCSS, resetCSSColorVariables } from "@/utils/dynamicColorUtils";
 import { logDebug, logError, logInfo } from "@/utils/logUtils";
 import React, { useEffect, useRef } from "react";
+import { DynamicColorMode } from "@/types/colors";
 
 const ColorManager = () => {
     logDebug("Render <ColorManager />");
@@ -17,6 +18,7 @@ const ColorManager = () => {
     const { selectedLocalImage, isUseLocalImage } = useImageStore();
     const styleRef = useRef<HTMLStyleElement | null>(null);
     const prevArtURL = useRef<string | null>(null);
+    const dynamicColorModeRef = useRef<DynamicColorMode | null>(null);
 
     useEffect(() => {
         styleRef.current = document.createElement("style");
@@ -43,7 +45,10 @@ const ColorManager = () => {
             return;
         }
 
-        if (isDynamicColor && (artworkData.nowPlayingArtURL !== prevArtURL.current || selectedLocalImage?.dataURL)) {
+        if (isDynamicColor && (
+            (artworkData.nowPlayingArtURL !== prevArtURL.current || selectedLocalImage?.dataURL) ||
+            dynamicColorMode !== dynamicColorModeRef.current
+        )) {
             if (styleRef?.current && isDynamicColor && artworkData.nowPlayingArtURL) {
                 applyExtractedColorsToCSS(
                     styleRef.current,
@@ -60,6 +65,7 @@ const ColorManager = () => {
             }
 
             prevArtURL.current = (isUseLocalImage && selectedLocalImage?.dataURL) || artworkData.nowPlayingArtURL;
+            dynamicColorModeRef.current = dynamicColorMode;
         }
     }, [isDynamicColor, dynamicColorMode, artworkData.nowPlayingArtURL, selectedLocalImage?.dataURL, isUseLocalImage]);
 

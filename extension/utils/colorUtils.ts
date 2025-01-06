@@ -37,6 +37,31 @@ const lightenColor = (color: Color, factor: number): Color => ({
 	),
 });
 
+const increaseSaturation = (color: Color, factor: number): Color => {
+	const { r, g, b } = color;
+	const max = Math.max(r, g, b);
+	const min = Math.min(r, g, b);
+	const delta = max - min;
+
+	if (delta === 0) return color;
+
+	const newR = r + (r - min) * factor;
+	const newG = g + (g - min) * factor;
+	const newB = b + (b - min) * factor;
+
+	return {
+		...color,
+		r: Math.max(0, Math.min(255, Math.round(newR))),
+		g: Math.max(0, Math.min(255, Math.round(newG))),
+		b: Math.max(0, Math.min(255, Math.round(newB))),
+		hex: rgbToHex(
+			Math.max(0, Math.min(255, Math.round(newR))),
+			Math.max(0, Math.min(255, Math.round(newG))),
+			Math.max(0, Math.min(255, Math.round(newB))),
+		),
+	};
+};
+
 const contrastRatio = (color1: Color, color2: Color): number => {
 	const lum1 = luminance(color1.r, color1.g, color1.b);
 	const lum2 = luminance(color2.r, color2.g, color2.b);
@@ -45,16 +70,29 @@ const contrastRatio = (color1: Color, color2: Color): number => {
 	return (lighter + 0.05) / (darker + 0.05);
 };
 
-const adjustBrightnessAndSaturation = (color: Color, brightnessFactor: number): Color => ({
-	...color,
-	r: Math.max(0, Math.min(255, Math.round(color.r * brightnessFactor))),
-	g: Math.max(0, Math.min(255, Math.round(color.g * brightnessFactor))),
-	b: Math.max(0, Math.min(255, Math.round(color.b * brightnessFactor))),
-	hex: rgbToHex(
-		Math.max(0, Math.min(255, Math.round(color.r * brightnessFactor))),
-		Math.max(0, Math.min(255, Math.round(color.g * brightnessFactor))),
-		Math.max(0, Math.min(255, Math.round(color.b * brightnessFactor))),
-	),
-});
+const increaseSaturationAndLighten = (color: Color, saturationFactor: number, lightnessFactor: number): Color => {
+	const { r, g, b } = color;
+	const max = Math.max(r, g, b);
+	const min = Math.min(r, g, b);
+	const delta = max - min;
 
-export { contrastRatio, adjustBrightnessAndSaturation, darkenColor, lightenColor, luminance, rgbToHex };
+	if (delta === 0) return color;
+
+	const saturatedR = Math.max(0, Math.min(r + (r - min) * saturationFactor));
+	const saturatedG = Math.max(0, Math.min(g + (g - min) * saturationFactor));
+	const saturatedB = Math.max(0, Math.min(b + (b - min) * saturationFactor));
+
+	return {
+		...color,
+		r: Math.min(255, Math.round(saturatedR + (255 - saturatedR) * lightnessFactor)),
+		g: Math.min(255, Math.round(saturatedG + (255 - saturatedG) * lightnessFactor)),
+		b: Math.min(255, Math.round(saturatedB + (255 - saturatedB) * lightnessFactor)),
+		hex: rgbToHex(
+			Math.min(255, Math.round(saturatedR + (255 - saturatedR) * lightnessFactor)),
+			Math.min(255, Math.round(saturatedG + (255 - saturatedG) * lightnessFactor)),
+			Math.min(255, Math.round(saturatedB + (255 - saturatedB) * lightnessFactor)),
+		),
+	}
+};
+
+export { contrastRatio, increaseSaturationAndLighten, darkenColor, lightenColor, increaseSaturation, luminance, rgbToHex };

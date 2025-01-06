@@ -1,5 +1,12 @@
 import type { BasicColorPalette, Color, ColorPalette, DynamicColorMode, ExtractedColors } from "@/types/colors";
-import { contrastRatio, darkenColor, lightenColor, rgbToHex } from "@/utils/colorUtils";
+import {
+	increaseSaturation,
+	contrastRatio,
+	darkenColor,
+	lightenColor,
+	rgbToHex,
+	increaseSaturationAndLighten
+} from "@/utils/colorUtils";
 import { logError } from "@/utils/logUtils";
 import { createCanvas, loadImage } from "canvas";
 
@@ -166,10 +173,10 @@ function generateDarkModePalette(
 		};
 	} else {
 		return {
-			accent: lightenColor(baseColor, 0.4),
-			button: lightenColor(tertiaryColor, 0.4),
-			"progress-bar": lightenColor(secondaryColor, 0.6),
-			"button-active": lightenColor(tertiaryColor, 0.4),
+			accent: increaseSaturationAndLighten(baseColor, 4, 0.2),
+			button: increaseSaturationAndLighten(tertiaryColor, 4, 0.2),
+			"progress-bar": increaseSaturationAndLighten(secondaryColor, 6, 0.3),
+			"button-active": increaseSaturationAndLighten(tertiaryColor, 4, 0.2),
 			primary: baseColor,
 			secondary: secondaryColor,
 			tertiary: tertiaryColor,

@@ -17,9 +17,9 @@ const BackgroundSection = () => {
 		backgroundSettings: { mode, styles, customBackgroundOverride },
 		colorSettings: { isDynamicColor, dynamicColorMode },
 		setBackgroundMode,
-		setDynamicColorMode,
 		updateBackgroundStyle,
 		setIsDynamicColor,
+		setDynamicColorMode,
 		setCustomBackgroundOverride,
 	} = useSettingsStore();
 

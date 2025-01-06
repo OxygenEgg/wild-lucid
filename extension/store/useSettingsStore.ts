@@ -22,7 +22,8 @@ const isValidSettings = (data: unknown): data is SettingsStore => {
 		typeof (data as SettingsStore).playbarSettings === "object" &&
 		"mode" in (data as SettingsStore).playbarSettings &&
 		typeof (data as SettingsStore).colorSettings === "object" &&
-		"isDynamicColor" in (data as SettingsStore).colorSettings
+		"isDynamicColor" in (data as SettingsStore).colorSettings &&
+		"dynamicColorMode" in (data as SettingsStore).colorSettings
 	);
 };
 
@@ -217,11 +218,6 @@ export const useSettingsStore = create(
 					},
 				})),
 
-			setDynamicColorMode: (dynamicColorMode) =>
-				set((state) => ({
-					colorSettings: { ...state.colorSettings, dynamicColorMode },
-				})),
-
 			setFont: (fontType, fontData) =>
 				set((state) => ({
 					interfaceSettings: {
@@ -282,6 +278,11 @@ export const useSettingsStore = create(
 			setIsDynamicColor: (isDynamicColor) =>
 				set((state) => ({
 					colorSettings: { ...state.colorSettings, isDynamicColor },
+				})),
+
+			setDynamicColorMode: (dynamicColorMode) =>
+				set((state) => ({
+					colorSettings: { ...state.colorSettings, dynamicColorMode },
 				})),
 
 			updatePlaybarStyle: (mode, key, value) =>
