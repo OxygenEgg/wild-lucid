@@ -9,7 +9,8 @@
 ## Join the Community!
 
 - **Discord:** [https://discord.gg/knXP88Zbph](https://discord.gg/knXP88Zbph)
-- **GitHub Issues:** [https://github.com/sanoojes/Spicetify-Lucid/issues](https://github.com/sanoojes/Spicetify-Lucid/issues)
+- **GitHub Issues:
+  ** [https://github.com/sanoojes/Spicetify-Lucid/issues](https://github.com/sanoojes/Spicetify-Lucid/issues)
 
 </div>
 
@@ -73,19 +74,26 @@
 
 - ![Compact playlist](./assets/images/base-playlist-compact.webp) _Compact playlist layout_
 - ![Playlist card](./assets/images/base-playlist-card.webp) _Playlist card view_
-- ![Playlist with dynamic color](./assets/images/base-playlist-dynamic-color.webp) _Dynamic color theme applied to playlist_
+- ![Playlist with dynamic color](./assets/images/base-playlist-dynamic-color.webp) _Dynamic color theme applied to
+  playlist_
 - ![Lyrics cinema with solid background](./assets/images/lyrics-cinema-solid.webp) _Solid background for lyrics_
 - ![Lyrics cinema with static background](./assets/images/lyrics-cinema-static.webp) _Static background for lyrics_
-- ![Lyrics cinema with animated background](./assets/images/lyrics-cinema-animated.webp) _Animated background for lyrics_
+- ![Lyrics cinema with animated background](./assets/images/lyrics-cinema-animated.webp) _Animated background for
+  lyrics_
 - ![Podcast](./assets/images/base-podcast.webp) _Podcast Page_
-- ![Lyrics page with compact playbar](./assets/images/base-normal-lyrics-page-compact-playbar.webp) _Compact playbar for lyrics view_
-- ![Playlist page with background and compact playbar](./assets/images/base-playlist-with-bg-page-compact-playbar.webp) _Background and compact playbar for playlist page_
+- ![Lyrics page with compact playbar](./assets/images/base-normal-lyrics-page-compact-playbar.webp) _Compact playbar for
+  lyrics view_
+- ![Playlist page with background and compact playbar](./assets/images/base-playlist-with-bg-page-compact-playbar.webp)
+  _Background and compact playbar for playlist page_
 
 ## **Customization**
 
 ### **Color scheme:**
 
-Available schemes: `dark`, `light`, `comfy`, `macos`, `coffee`, `violet`, `dracula`, `biscuit`, `cozytile`, `rosepine`, `darkgreen`, `greenland`, `dark-bloom`, `dark-fluent`, `dracula-pro`, `cosmic-dusk`, `midnight-slate`, `nocturne-coast`, `catppuccin-mocha`, `midnight-catppuccin`, `catppuccin-macchiato`, `catppuccin-darkrose`, `abyss`, `vesper` , `night-owl`.
+Available schemes: `dark`, `light`, `comfy`, `macos`, `coffee`, `violet`, `dracula`, `biscuit`, `cozytile`, `rosepine`,
+`darkgreen`, `greenland`, `dark-bloom`, `dark-fluent`, `dracula-pro`, `cosmic-dusk`, `midnight-slate`, `nocturne-coast`,
+`catppuccin-mocha`, `midnight-catppuccin`, `catppuccin-macchiato`, `catppuccin-darkrose`, `abyss`, `vesper` ,
+`night-owl`.
 
 ## Dependencies
 

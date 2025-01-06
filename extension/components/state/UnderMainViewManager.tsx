@@ -3,13 +3,13 @@ import { useUnderMainViewLoader } from "@/hooks/useUnderMainViewLoader";
 import { logDebug } from "@/utils/logUtils";
 
 const UnderMainViewManager = () => {
-	logDebug("Render <UnderMainViewManager />");
+    logDebug("Render <UnderMainViewManager />");
 
-	useUnderMainViewLoader();
+    useUnderMainViewLoader();
 
-	mountUnderMainViewWatcher();
+    mountUnderMainViewWatcher();
 
-	return null;
+    return null;
 };
 
 export default UnderMainViewManager;

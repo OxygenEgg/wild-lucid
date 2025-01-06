@@ -4,28 +4,28 @@ import { getPathCategory } from "@/utils/pathUtils";
 import React, { useEffect } from "react";
 
 const PathManager = () => {
-	const { pageCategory, setPageCategory } = useLucidStore();
+    const { pageCategory, setPageCategory } = useLucidStore();
 
-	useBodyClass(pageCategory);
+    useBodyClass(pageCategory);
 
-	useEffect(() => {
-		const setPath = () => {
-			const pathname = Spicetify.Platform.History.location.pathname;
-			setPageCategory(getPathCategory(pathname));
-		};
+    useEffect(() => {
+        const setPath = () => {
+            const pathname = Spicetify.Platform.History.location.pathname;
+            setPageCategory(getPathCategory(pathname));
+        };
 
-		setPath();
+        setPath();
 
-		const unlistenHistory = Spicetify.Platform.History.listen(() => {
-			setPath();
-		});
+        const unlistenHistory = Spicetify.Platform.History.listen(() => {
+            setPath();
+        });
 
-		return () => {
-			unlistenHistory();
-		};
-	}, [setPageCategory]);
+        return () => {
+            unlistenHistory();
+        };
+    }, [setPageCategory]);
 
-	return null;
+    return null;
 };
 
 export default PathManager;

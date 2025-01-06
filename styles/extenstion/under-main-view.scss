@@ -10,14 +10,14 @@ $under-main-view-max-scale: 1.5;
   pointer-events: none;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 100%
+                  to bottom,
+                  rgba(0, 0, 0, 1) 0%,
+                  rgba(0, 0, 0, 0) 100%
   );
   mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 100%
+                  to bottom,
+                  rgba(0, 0, 0, 1) 0%,
+                  rgba(0, 0, 0, 0) 100%
   );
   opacity: var(--artwork-opacity, 1);
   transition: opacity 0.3s ease;

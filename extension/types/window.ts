@@ -1,3 +1,3 @@
 interface Window extends Window {
-	zoom: number;
+    zoom: number;
 }

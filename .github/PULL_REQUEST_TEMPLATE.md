@@ -1,6 +1,7 @@
 ## ✨ Lucid Theme Enhancement ✨
 
-Hey there! 👋 Thanks for contributing to the Lucid Spicetify theme! To keep things smooth, please fill out this template before submitting your awesome changes.
+Hey there! 👋 Thanks for contributing to the Lucid Spicetify theme! To keep things smooth, please fill out this template
+before submitting your awesome changes.
 
 **Tell us about your changes!** 📝
 
@@ -11,7 +12,8 @@ Hey there! 👋 Thanks for contributing to the Lucid Spicetify theme! To keep th
 
 - [ ] 🐛 **Bug fix:** Crushed a bug! This change fixes an existing issue without impacting other functionalities.
 - [ ] ✨ **New feature:** Shiny and new! This adds a cool new functionality to the theme.
-- [ ] 💥 **Breaking change:** Watch out! This fix or feature might cause some existing functionalities to behave differently.
+- [ ] 💥 **Breaking change:** Watch out! This fix or feature might cause some existing functionalities to behave
+  differently.
 - [ ] 📚 **Documentation update:** Making the docs even better! This improves the documentation for easier understanding.
 - [ ] 🌈 **Other:** (Describe your awesome change here!)
 
@@ -23,11 +25,13 @@ Hey there! 👋 Thanks for contributing to the Lucid Spicetify theme! To keep th
 
 **Did you test it out?** 🧪
 
-- **Testing Steps:** (Tell us how you tested your changes and provide clear instructions for reviewers to reproduce your testing.)
+- **Testing Steps:** (Tell us how you tested your changes and provide clear instructions for reviewers to reproduce your
+  testing.)
 
 **Show it off! (Optional)** 🖼️
 
-- **Screenshots/GIFs:** (Include visuals if your changes impact the theme's appearance. A picture is worth a thousand words!)
+- **Screenshots/GIFs:** (Include visuals if your changes impact the theme's appearance. A picture is worth a thousand
+  words!)
 
 **Final Check!** ✅
 

@@ -9,7 +9,7 @@ export const GITHUB_RELEASES_URL = "https://api.github.com/repos/sanoojes/spicet
 
 // DOM Selectors & Prefixes
 export const SCROLL_NODE_SELECTORS =
-	".Root__main-view .os-viewport, .Root__main-view .main-view-container > .main-view-container__scroll-node:not([data-overlayscrollbars-initialize]), .Root__main-view .main-view-container__scroll-node > [data-overlayscrollbars-viewport]";
+    ".Root__main-view .os-viewport, .Root__main-view .main-view-container > .main-view-container__scroll-node:not([data-overlayscrollbars-initialize]), .Root__main-view .main-view-container__scroll-node > [data-overlayscrollbars-viewport]";
 export const PLAYLIST_ART_IMAGE_CLASS_PREFIX = "playlist-art-image-";
 export const PLAYLIST_VIEW_CLASS_PREFIX = "playlist-view-";
 

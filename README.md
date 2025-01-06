@@ -1,8 +1,10 @@
 ## 🎨 Spicetify Lucid Theme
 
-**Lucid is a Spicetify theme that blends a clean, modern aesthetic with a touch of dynamism and customization, creating a unique and personalized Spotify experience.**
+**Lucid is a Spicetify theme that blends a clean, modern aesthetic with a touch of dynamism and customization, creating
+a unique and personalized Spotify experience.**
 
-**Embrace a minimalist design while injecting a subtle pop of color and personality into your music streaming experience.**
+**Embrace a minimalist design while injecting a subtle pop of color and personality into your music streaming
+experience.**
 
 **See Lucid in Action:**
 
@@ -59,14 +61,17 @@
 ## **Features:**
 
 - **Auto updates (planned):** Bug fixes are addressed promptly to keep your theme experience smooth.
-- **Dynamic background that adapts to album art:** Enjoy a visually engaging experience with a background that changes based on your current song album art.
-- **Multiple color schemes:** Choose from a variety of color schemes to match your style (dark, light, dark-green, coffee, comfy, dark-fluent, greenland, biscuit, macos, rosepine, dracula, dracula-pro).
+- **Dynamic background that adapts to album art:** Enjoy a visually engaging experience with a background that changes
+  based on your current song album art.
+- **Multiple color schemes:** Choose from a variety of color schemes to match your style (dark, light, dark-green,
+  coffee, comfy, dark-fluent, greenland, biscuit, macos, rosepine, dracula, dracula-pro).
 - **Easy installation via scripts or Spicetify Marketplace:** Choose the installation method that best suits you.
 
 ## Join the Community
 
 - **Discord:** [https://discord.gg/PWEyKduwJh](https://discord.gg/PWEyKduwJh)
-- **GitHub Issues:** [https://github.com/sanoojes/Spicetify-Lucid/issues](https://github.com/sanoojes/Spicetify-Lucid/issues)
+- **GitHub Issues:
+  ** [https://github.com/sanoojes/Spicetify-Lucid/issues](https://github.com/sanoojes/Spicetify-Lucid/issues)
 
 ## **Installation**
 
@@ -122,16 +127,22 @@ spicetify apply
 
 ### **Using Spicetify Marketplace (simpler installation):**
 
-1. Install the `spicetify-marketplace` extension following its instructions: [https://github.com/spicetify/marketplace/wiki/Installation](https://github.com/spicetify/marketplace/wiki/Installation).
+1. Install the `spicetify-marketplace` extension following its
+   instructions: [https://github.com/spicetify/marketplace/wiki/Installation](https://github.com/spicetify/marketplace/wiki/Installation).
 2. Search for "Lucid" in the Spicetify Marketplace and click "Install."
 
 ### **Advanced Manual Installation:**
 
-1. **Download the repository:** Visit the Lucid GitHub repository: [https://github.com/sanoojes/Spicetify-Lucid](https://github.com/sanoojes/Spicetify-Lucid) and download the code as a ZIP archive.
-2. **Locate Spicetify's Themes directory:** Use the command `spicetify path userdata` in your terminal/command prompt to find the path.
+1. **Download the repository:** Visit the Lucid GitHub
+   repository: [https://github.com/sanoojes/Spicetify-Lucid](https://github.com/sanoojes/Spicetify-Lucid) and download
+   the code as a ZIP archive.
+2. **Locate Spicetify's Themes directory:** Use the command `spicetify path userdata` in your terminal/command prompt to
+   find the path.
 3. **Create the theme folder:** Inside the Themes directory, create a new folder named `Lucid`.
-4. **Extract theme files:** Extract the downloaded ZIP archive and move all files from the `src` subfolder to the `Lucid` folder you created.
-5. **Apply the theme:** Open your terminal/command prompt and run these commands (replace `<color_scheme>` with your desired scheme):
+4. **Extract theme files:** Extract the downloaded ZIP archive and move all files from the `src` subfolder to the
+   `Lucid` folder you created.
+5. **Apply the theme:** Open your terminal/command prompt and run these commands (replace `<color_scheme>` with your
+   desired scheme):
 
    ```bash
    spicetify config current_theme Lucid
@@ -151,7 +162,10 @@ spicetify apply
   spicetify apply
   ```
 
-Available schemes: `dark`, `light`, `comfy`, `macos`, `coffee`, `violet`, `dracula`, `biscuit`, `cozytile`, `rosepine`, `darkgreen`, `greenland`, `dark-bloom`, `dark-fluent`, `dracula-pro`, `cosmic-dusk`, `midnight-slate`, `nocturne-coast`, `catppuccin-mocha`, `midnight-catppuccin`, `catppuccin-macchiato`, `catppuccin-darkrose`, `abyss`, `vesper` , `night-owl`.
+Available schemes: `dark`, `light`, `comfy`, `macos`, `coffee`, `violet`, `dracula`, `biscuit`, `cozytile`, `rosepine`,
+`darkgreen`, `greenland`, `dark-bloom`, `dark-fluent`, `dracula-pro`, `cosmic-dusk`, `midnight-slate`, `nocturne-coast`,
+`catppuccin-mocha`, `midnight-catppuccin`, `catppuccin-macchiato`, `catppuccin-darkrose`, `abyss`, `vesper` ,
+`night-owl`.
 
 - If you installed via Marketplace, the color scheme can be changed directly in the theme options.
 
@@ -225,13 +239,17 @@ Available schemes: `dark`, `light`, `comfy`, `macos`, `coffee`, `violet`, `dracu
 
 - ![Compact playlist](./assets/images/base-playlist-compact.webp) _Compact playlist layout_
 - ![Playlist card](./assets/images/base-playlist-card.webp) _Playlist card view_
-- ![Playlist with dynamic color](./assets/images/base-playlist-dynamic-color.webp) _Dynamic color theme applied to playlist_
+- ![Playlist with dynamic color](./assets/images/base-playlist-dynamic-color.webp) _Dynamic color theme applied to
+  playlist_
 - ![Lyrics cinema with solid background](./assets/images/lyrics-cinema-solid.webp) _Solid background for lyrics_
 - ![Lyrics cinema with static background](./assets/images/lyrics-cinema-static.webp) _Static background for lyrics_
-- ![Lyrics cinema with animated background](./assets/images/lyrics-cinema-animated.webp) _Animated background for lyrics_
+- ![Lyrics cinema with animated background](./assets/images/lyrics-cinema-animated.webp) _Animated background for
+  lyrics_
 - ![Podcast](./assets/images/base-podcast.webp) _Podcast Page_
-- ![Lyrics page with compact playbar](./assets/images/base-normal-lyrics-page-compact-playbar.webp) _Compact playbar for lyrics view_
-- ![Playlist page with background and compact playbar](./assets/images/base-playlist-with-bg-page-compact-playbar.webp) _Background and compact playbar for playlist page_
+- ![Lyrics page with compact playbar](./assets/images/base-normal-lyrics-page-compact-playbar.webp) _Compact playbar for
+  lyrics view_
+- ![Playlist page with background and compact playbar](./assets/images/base-playlist-with-bg-page-compact-playbar.webp)
+  _Background and compact playbar for playlist page_
 
 ## License
 

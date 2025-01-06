@@ -1,10 +1,10 @@
 export type FontTypes = "body";
 
 export type FontData = {
-	url: string;
-	fontFamily: string;
+    url: string;
+    fontFamily: string;
 };
 
 export type FontSettings = {
-	[key in FontTypes]: FontData;
+    [key in FontTypes]: FontData;
 };

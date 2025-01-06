@@ -5,12 +5,12 @@ import { logDebug } from "@/utils/logUtils";
 import React, { memo } from "react";
 
 const SettingsManager = memo(() => {
-	logDebug("Render <SettingsManager />");
+    logDebug("Render <SettingsManager />");
 
-	const { isOpen } = useModal("settings");
-	useSettingsAccess();
+    const { isOpen } = useModal("settings");
+    useSettingsAccess();
 
-	return <>{isOpen && <SettingsModal />}</>;
+    return <>{isOpen && <SettingsModal/>}</>;
 });
 
 export default SettingsManager;

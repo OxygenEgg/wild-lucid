@@ -7,6 +7,7 @@
 .search-searchCategory-carouselButton {
   border-radius: $border-radius-button;
   background-color: rgba(var(--spice-rgb-selected-row), 0.1);
+
   &:hover {
     background-color: rgba(var(--spice-rgb-selected-row), 0.2);
   }

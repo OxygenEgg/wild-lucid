@@ -7,7 +7,7 @@ transition: var(--spice-transition, all 0.3s ease-in-out);
 }`:r+=`:root{
 will-change: --spice-accent,--spice-rgb-accent,--spice-button,--spice-rgb-button,--spice-progress-bar,--spice-rgb-progress-bar,--spice-button-active,--spice-rgb-button-active,--spice-progress-bar,--spice-rgb-progress-bar,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;
 transition: var(--spice-transition, all 0.3s ease-in-out);
-}`,e.textContent=r}async function So(e,o){o==="full"?e.textContent=`:root{
+}`,e.textContent=r}function So(e,o){o==="full"?e.textContent=`:root{
 will-change: --spice-main,--spice-rgb-main,--spice-sidebar,--spice-rgb-sidebar,--spice-card,--spice-rgb-card,--spice-player,--spice-rgb-player,--spice-accent,--spice-rgb-accent,--spice-highlight,--spice-rgb-highlight,--spice-button,--spice-rgb-button,--spice-button-active,--spice-rgb-button-active,--spice-text,--spice-rgb-text,--spice-progress-bar,--spice-rgb-progress-bar,--spice-subtext,--spice-rgb-subtext,--spice-primary,--spice-rgb-primary,--spice-secondary,--spice-rgb-secondary,--spice-tertiary,--spice-rgb-tertiary;
 transition: all 0.3s ease-in-out;
 }`:e.textContent=`:root{

@@ -55,11 +55,11 @@
   /* CanvasNPV */
   .E08D6ucrHuPJYzzGO7HG {
     -webkit-mask-image: linear-gradient(to bottom,
-        rgba(0, 0, 0, 1) 75%,
-        rgba(0, 0, 0, 0) 100%);
+            rgba(0, 0, 0, 1) 75%,
+            rgba(0, 0, 0, 0) 100%);
     mask-image: linear-gradient(to bottom,
-        rgba(0, 0, 0, 1) 75%,
-        rgba(0, 0, 0, 0) 100%);
+            rgba(0, 0, 0, 1) 75%,
+            rgba(0, 0, 0, 0) 100%);
 
     &::after {
       opacity: 0;
@@ -159,7 +159,7 @@
 
     .hjyiWzPtKHn_5kCe9vyg {
       --height: calc(max(var(--min-height),
-            min(var(--max-height),
+      min(var(--max-height),
               (0.69 + (var(--panel-width, var(--right-sidebar-width, 420)) - 280) * 0.0003571429) * 100vh)) - 72px);
     }
 

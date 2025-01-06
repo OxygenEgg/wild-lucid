@@ -8,6 +8,7 @@
 
   .main-navBar-mainNav {
     @include bg-none;
+
     .main-yourLibraryX-entryPoints {
       background: $left-sidebar-bg;
       transition: width 0.35s ease;
@@ -31,6 +32,7 @@
     .main-yourLibraryX-listItem {
       & > div {
         border: $transparent-border;
+
         &.BoxComponent-group-listRow-tinted-isInteractive-minBlockSize_56px-padding_8px {
           @include default-border-with-radius;
         }

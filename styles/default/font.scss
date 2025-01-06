@@ -2,11 +2,11 @@
 
 // font-stack declaration
 $font-stack-body: var(--body-font-to-use), SpotifyMixUI, CircularSp-Arab,
-  CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva,
-  var(--fallback-fonts, sans-serif);
+CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva,
+var(--fallback-fonts, sans-serif);
 $font-stack-title: var(--body-font-to-use), SpotifyMixUITitle, CircularSp-Arab,
-  CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva,
-  var(--fallback-fonts, sans-serif);
+CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva,
+var(--fallback-fonts, sans-serif);
 
 // font-weight
 $font-weight-regular: 400;
@@ -38,33 +38,33 @@ $text-size-larger-5: var(--encore-text-size-larger-5);
 
 .encore-text-headline-large {
   @include text-style(
-    $font-stack-title,
-    $text-size-larger-5,
-    $font-weight-extra-bold
+                  $font-stack-title,
+                  $text-size-larger-5,
+                  $font-weight-extra-bold
   );
 }
 
 .encore-text-headline-medium {
   @include text-style(
-    $font-stack-title,
-    $text-size-larger-4,
-    $font-weight-bold
+                  $font-stack-title,
+                  $text-size-larger-4,
+                  $font-weight-bold
   );
 }
 
 .encore-text-title-large {
   @include text-style(
-    $font-stack-title,
-    $text-size-larger-3,
-    $font-weight-bold
+                  $font-stack-title,
+                  $text-size-larger-3,
+                  $font-weight-bold
   );
 }
 
 .encore-text-title-medium {
   @include text-style(
-    $font-stack-title,
-    $text-size-larger-2,
-    $font-weight-bold
+                  $font-stack-title,
+                  $text-size-larger-2,
+                  $font-weight-bold
   );
 }
 
@@ -82,9 +82,9 @@ $text-size-larger-5: var(--encore-text-size-larger-5);
 
 .encore-text-body-small {
   @include text-style(
-    $font-stack-body,
-    $text-size-smaller,
-    $font-weight-regular
+                  $font-stack-body,
+                  $text-size-smaller,
+                  $font-weight-regular
   );
 }
 
@@ -94,17 +94,17 @@ $text-size-larger-5: var(--encore-text-size-larger-5);
 
 .encore-text-marginal {
   @include text-style(
-    $font-stack-body,
-    $text-size-smaller-2,
-    $font-weight-regular
+                  $font-stack-body,
+                  $text-size-smaller-2,
+                  $font-weight-regular
   );
 }
 
 .encore-text-marginal-bold {
   @include text-style(
-    $font-stack-body,
-    $text-size-smaller-2,
-    $font-weight-bold
+                  $font-stack-body,
+                  $text-size-smaller-2,
+                  $font-weight-bold
   );
 }
 

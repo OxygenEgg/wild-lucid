@@ -17,24 +17,24 @@ import React from "react";
  * Manages state for the whole theme
  */
 const MainStateManager = () => {
-	logDebug("Render <MainStateManager />");
+    logDebug("Render <MainStateManager />");
 
-	return (
-		<>
-			<PathManager />
-			<GrainManager />
-			<ColorManager />
-			<ZoomManager />
-			<PlaybarManager />
-			<ArtworkManager />
-			<BorderManager />
-			<GlobalNavManager />
-			<FontStateManager />
-			<NpvManager />
-			<UnderMainViewManager />
-			<WindowControlsManager />
-		</>
-	);
+    return (
+        <>
+            <PathManager/>
+            <GrainManager/>
+            <ColorManager/>
+            <ZoomManager/>
+            <PlaybarManager/>
+            <ArtworkManager/>
+            <BorderManager/>
+            <GlobalNavManager/>
+            <FontStateManager/>
+            <NpvManager/>
+            <UnderMainViewManager/>
+            <WindowControlsManager/>
+        </>
+    );
 };
 
 export default MainStateManager;

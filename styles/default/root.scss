@@ -1,8 +1,8 @@
 :root {
   // Button Border radius override
   --encore-button-corner-radius: var(
-    --button-border-radius,
-    #{$border-radius-full}
+                  --button-border-radius,
+                  #{$border-radius-full}
   );
 
   // Color overrides
@@ -108,6 +108,7 @@ section[data-testid*="playlist"] {
 .x-filterBox-expandButton:hover {
   border-radius: $border-radius-avatar;
 }
+
 .view-homeShortcutsGrid-PlayButtonContainer {
   border: none;
   border-radius: 0px;
@@ -138,8 +139,7 @@ section[data-testid*="playlist"] {
 .spotify__container--is-desktop.spotify__os--is-windows {
   .control-nav .main-topBar-container,
   .global-nav .Root__globalNav {
-    padding-inline: var(--top-bar-padding-start, calc(64px / var(--zoom)))
-      var(--top-bar-padding-end, calc(144px / var(--zoom)));
+    padding-inline: var(--top-bar-padding-start, calc(64px / var(--zoom))) var(--top-bar-padding-end, calc(144px / var(--zoom)));
   }
 }
 
@@ -171,8 +171,8 @@ section[data-testid*="playlist"] {
   --lyrics-color-active: var(--spice-text, #fafafa) !important;
   --lyrics-color-inactive: rgba(var(--spice-rgb-subtext), 0.75) !important;
   --lyrics-highlight-background: rgba(
-    var(--spice-rgb-subtext),
-    0.75
+                  var(--spice-rgb-subtext),
+                  0.75
   ) !important;
 
   .lyrics-config-button-container {
@@ -188,6 +188,7 @@ section[data-testid*="playlist"] {
   background-color: var(--spice-main);
   @include default-border-with-radius;
 }
+
 .progress-bar {
   &__slider {
     background-color: var(--spice-accent);
@@ -270,7 +271,7 @@ kbd,
 
 // WILD hide BeautifulLyricsFullscreenButton
 #BeautifulLyricsFullscreenButton {
-  display:none;
+  display: none;
 }
 
 // WILD

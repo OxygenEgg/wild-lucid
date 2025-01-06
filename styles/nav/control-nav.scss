@@ -126,6 +126,7 @@ $active-bg: rgba(var(--spice-rgb-card), 0.6);
               display: flex;
               justify-content: center;
               align-items: center;
+
               > div,
               .main-image-image {
                 @include image-dimensions;

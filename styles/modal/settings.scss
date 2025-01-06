@@ -27,6 +27,7 @@
       background-color: $card-bg-color;
       color: var(--spice-text, white);
       transition: background-color 0.2s ease;
+
       &:hover {
         background-color: rgba(var(--spice-rgb-accent), 0.5);
       }
@@ -267,9 +268,9 @@
     &:hover::after {
       border-color: rgba(220, 38, 38, 0.25) !important;
       background: linear-gradient(
-        to bottom,
-        rgba(255, 0, 0, 0.2) 0%,
-        rgba(255, 0, 0, 0) 100%
+                      to bottom,
+                      rgba(255, 0, 0, 0.2) 0%,
+                      rgba(255, 0, 0, 0) 100%
       );
     }
   }

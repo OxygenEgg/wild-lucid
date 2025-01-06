@@ -9,19 +9,19 @@ import React, { type FC, memo } from "react";
 
 // TODO: Add Pagination to sections
 const SettingsModal: FC = memo(() => {
-	const { isOpen, closeModal } = useModal("settings");
+    const { isOpen, closeModal } = useModal("settings");
 
-	return (
-		<Modal title="Lucid Settings" onClose={closeModal} isOpen={isOpen}>
-			<div className="sections-container">
-				<BackgroundSection />
-				<InterfaceSection />
-				<PlaybarSection />
-				<ResetSettingsSection />
-				<ImportExportSection />
-			</div>
-		</Modal>
-	);
+    return (
+        <Modal title="Lucid Settings" onClose={closeModal} isOpen={isOpen}>
+            <div className="sections-container">
+                <BackgroundSection/>
+                <InterfaceSection/>
+                <PlaybarSection/>
+                <ResetSettingsSection/>
+                <ImportExportSection/>
+            </div>
+        </Modal>
+    );
 });
 
 export default SettingsModal;
