@@ -1,75 +1,32 @@
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { useImageStore } from "@/store/useImageStore";
 import { useLucidStore } from "@/store/useLucidStore";
 import { useSettingsStore } from "@/store/useSettingsStore";
-import { applyExtractedColorsToCSS, resetCSSColorVariables } from "@/utils/dynamicColorUtils";
-import { logDebug, logError, logInfo } from "@/utils/logUtils";
-import React, { useEffect, useRef } from "react";
-import { DynamicColorMode } from "@/types/colors";
+import { addDynamicColorsFromImage, resetDynamicColors } from "@/utils/dynamicColorUtils";
+import { logDebug } from "@/utils/logUtils";
+import { useEffect } from "react";
 
 const ColorManager = () => {
-    logDebug("Render <ColorManager />");
+	logDebug("Render <ColorManager />");
 
-    const {
-        colorSettings: { isDynamicColor, dynamicColorMode },
-    } = useSettingsStore();
+	const {
+		colorSettings: { isDynamicColor },
+	} = useSettingsStore();
 
-    const { artworkData } = useLucidStore();
-    const { selectedLocalImage, isUseLocalImage } = useImageStore();
-    const styleRef = useRef<HTMLStyleElement | null>(null);
-    const prevArtURL = useRef<string | null>(null);
-    const dynamicColorModeRef = useRef<DynamicColorMode | null>(null);
+	const { artworkData } = useLucidStore();
+	const { selectedLocalImage, isUseLocalImage } = useImageStore();
 
-    useEffect(() => {
-        styleRef.current = document.createElement("style");
-        styleRef.current.id = "lucid_dynamic_colors";
-        document.head.appendChild(styleRef.current);
+	useEffect(() => {
+		if (!isDynamicColor) {
+			resetDynamicColors();
+			return;
+		}
 
-        return () => {
-            if (styleRef.current) {
-                document.head.removeChild(styleRef.current);
-            }
-        };
-    }, []);
+		addDynamicColorsFromImage(
+			isUseLocalImage && selectedLocalImage?.dataURL ? selectedLocalImage.dataURL : artworkData.nowPlayingArtURL,
+		);
+	}, [selectedLocalImage, isUseLocalImage, artworkData.nowPlayingArtURL, isDynamicColor]);
 
-    useEffect(() => {
-        if (!isDynamicColor) {
-            if (prevArtURL.current) {
-                prevArtURL.current = null;
-            }
-
-            if (styleRef.current) {
-                resetCSSColorVariables(styleRef.current, dynamicColorMode);
-            }
-
-            return;
-        }
-
-        if (isDynamicColor && (
-            (artworkData.nowPlayingArtURL !== prevArtURL.current || selectedLocalImage?.dataURL) ||
-            dynamicColorMode !== dynamicColorModeRef.current
-        )) {
-            if (styleRef?.current && isDynamicColor && artworkData.nowPlayingArtURL) {
-                applyExtractedColorsToCSS(
-                    styleRef.current,
-                    isDynamicColor,
-                    dynamicColorMode,
-                    (isUseLocalImage && selectedLocalImage?.dataURL) || artworkData.nowPlayingArtURL,
-                )
-                    .then(() => {
-                        logInfo("Dynamic colors updated!");
-                    })
-                    .catch((error) => {
-                        logError("Error updating colors:", error);
-                    });
-            }
-
-            prevArtURL.current = (isUseLocalImage && selectedLocalImage?.dataURL) || artworkData.nowPlayingArtURL;
-            dynamicColorModeRef.current = dynamicColorMode;
-        }
-    }, [isDynamicColor, dynamicColorMode, artworkData.nowPlayingArtURL, selectedLocalImage?.dataURL, isUseLocalImage]);
-
-    return null;
+	return null;
 };
 
 export default ColorManager;
