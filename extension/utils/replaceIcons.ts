@@ -260,8 +260,8 @@ max-width: 10rem;
   width: 16px;
   display: flex;
   background-color: currentColor !important;
-  -webkit-mask-image: var(--fullscreen-noarrows-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid@main/assets/icons/fullscreen-arrows2.svg"));
-  mask-image: var(--fullscreen-noarrows-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid@main/assets/icons/fullscreen-arrows2.svg"));
+  -webkit-mask-image: var(--fullscreen-arrows2-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid@main/assets/icons/fullscreen-arrows2.svg"));
+  mask-image: var(--fullscreen-arrows2-icon, url("https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid@main/assets/icons/fullscreen-arrows2.svg"));
 }
 `;
 };
