@@ -21,18 +21,18 @@ const MainStateManager = () => {
 
     return (
         <>
-            <PathManager/>
-            <GrainManager/>
-            <ColorManager/>
-            <ZoomManager/>
-            <PlaybarManager/>
-            <ArtworkManager/>
-            <BorderManager/>
-            <GlobalNavManager/>
-            <FontStateManager/>
-            <NpvManager/>
-            <UnderMainViewManager/>
-            <WindowControlsManager/>
+            <PathManager />
+            <GrainManager />
+            <ColorManager />
+            <ZoomManager />
+            <PlaybarManager />
+            <ArtworkManager />
+            <BorderManager />
+            <GlobalNavManager />
+            <FontStateManager />
+            <NpvManager />
+            <UnderMainViewManager />
+            <WindowControlsManager />
         </>
     );
 };

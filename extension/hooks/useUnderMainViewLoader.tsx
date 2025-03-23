@@ -22,7 +22,7 @@ export const useUnderMainViewLoader = () => {
             underMainViewRef.current = newUnderMainView;
 
             if (underMainViewRef.current) {
-                Spicetify.ReactDOM.createRoot(underMainViewRef.current).render(<PlaylistViewManager/>);
+                Spicetify.ReactDOM.createRoot(underMainViewRef.current).render(<PlaylistViewManager />);
             }
         };
 

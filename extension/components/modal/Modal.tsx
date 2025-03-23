@@ -5,7 +5,7 @@ const Modal = memo(({ title, children, headingChild, onClose, isOpen = false }: 
     return isOpen ? (
         <div className="modal-container">
             {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-            <div className={`modal-overlay ${isOpen && "open"}`} style={{ zIndex: 20 }} onClick={onClose}/>
+            <div className={`modal-overlay ${isOpen && "open"}`} style={{ zIndex: 20 }} onClick={onClose} />
             <dialog open={isOpen} className={`modal-section ${isOpen && "open"}`} aria-label={title} aria-modal="true">
                 <div className="main-embedWidgetGenerator-container">
                     <div className="main-trackCreditsModal-header">

@@ -67,7 +67,9 @@ const PlaylistViewManager = () => {
     const backgroundImageUrl =
         pageCategory !== "other" && backgroundImageMode !== "none"
             ? underMainBackgroundImage ||
-            (backgroundImageMode === "inherit" ? artworkData.currentPageArtURL || "" : artworkData.nowPlayingArtURL || "")
+              (backgroundImageMode === "inherit"
+                  ? artworkData.currentPageArtURL || ""
+                  : artworkData.nowPlayingArtURL || "")
             : "none";
 
     const containerClasses = `playlist-art-container ${playlistViewMode} ${backgroundImageMode}`;
@@ -78,14 +80,14 @@ const PlaylistViewManager = () => {
             className={containerClasses}
             data-playlist-view-mode={playlistViewMode}
             ref={backgroundRef}>
-			<div
+            <div
                 className="background"
                 ref={blurRef}
                 style={{
                     backgroundImage: `url(${backgroundImageUrl})`,
                 }}
             />
-			<div
+            <div
                 className="overlay"
                 style={{
                     height: "100%",
@@ -94,7 +96,7 @@ const PlaylistViewManager = () => {
                     inset: 0,
                 }}
             />
-		</span>
+        </span>
     );
 };
 

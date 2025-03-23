@@ -7,7 +7,7 @@ const WindowControlsManager = memo(() => {
         <>
             {isWindowsPlatform ? (
                 <div id="transperent-controls-container" style={{ containerType: "normal", pointerEvents: "none" }}>
-                    {!isCustomControls && isWindowsPlatform ? <TransparentWindowControl/> : null}
+                    {!isCustomControls && isWindowsPlatform ? <TransparentWindowControl /> : null}
                 </div>
             ) : null}
         </>

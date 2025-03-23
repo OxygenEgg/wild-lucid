@@ -11,7 +11,6 @@
     "biome-check": "npx @biomejs/biome check --write .",
     "build-extension": "node build/builder.js",
     "mv-files": "node build/move.js",
-    "build-and-move": "npm run build-extension && npm run mv-files",
     "compile-sass": "sass --no-source-map --style=compressed styles/main.scss src/user.css",
     "watch-sass": "sass --watch --no-source-map --style=compressed styles/main.scss src/user.css",
     "apply": "npm run biome-check && npm run compile-sass && npm run build-extension && npm run mv-files",

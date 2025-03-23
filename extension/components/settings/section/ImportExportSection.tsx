@@ -78,7 +78,7 @@ const ImportExportSection = () => {
                         tooltip="Paste your JSON settings here to import them. Ensure the JSON is correctly formatted."
                         style={{ display: "flex", gap: "0.5rem" }}>
                         <Button onClick={handlePaste}>Paste And Import</Button>
-                        <Input ref={inputRef} type="text" label="Paste JSON here" placeholder="Paste JSON here"/>
+                        <Input ref={inputRef} type="text" label="Paste JSON here" placeholder="Paste JSON here" />
                         <Button onClick={handleImport}>Import</Button>
                     </Card>
                 )}

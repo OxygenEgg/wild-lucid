@@ -11,12 +11,8 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./extension/*"
-      ]
+      "@/*": ["./extension/*"]
     }
   },
-  "include": [
-    "./extension/**/*.*"
-  ]
+  "include": ["./extension/**/*.*"]
 }

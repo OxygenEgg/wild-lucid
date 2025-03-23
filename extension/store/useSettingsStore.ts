@@ -53,8 +53,8 @@ export const useSettingsStore = create(
                         error instanceof SyntaxError
                             ? "Failed to parse JSON: Please ensure your input is valid JSON."
                             : error instanceof Error
-                                ? error.message
-                                : "An unknown error occurred.";
+                              ? error.message
+                              : "An unknown error occurred.";
 
                     addToast(errorMessage, true);
                     return false;

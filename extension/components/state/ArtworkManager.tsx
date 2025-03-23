@@ -65,7 +65,10 @@ const ArtworkManager = () => {
 
     useEffect(() => {
         if (artworkData.nowPlayingArtURL) {
-            document.documentElement.style.setProperty("--now-playing-art-image", `url("${artworkData.nowPlayingArtURL}")`);
+            document.documentElement.style.setProperty(
+                "--now-playing-art-image",
+                `url("${artworkData.nowPlayingArtURL}")`,
+            );
             logInfo(`Updated Now Playing Art View: ${artworkData.nowPlayingArtURL}`);
         }
     }, [artworkData.nowPlayingArtURL]);

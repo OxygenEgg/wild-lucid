@@ -36,21 +36,21 @@ const Dropdown: FC<DropdownSetting> = ({ options, selectedValue, onChange, place
                     type="button">
                     <p className="encore-text">{placeholder || selectedValue || "Dropdown"}</p>
                     <span className="dropdown-arrow">
-						<ArrowDown/>
-					</span>
+                        <ArrowDown />
+                    </span>
                 </button>
                 <div className={`dropdown-menu ${isOpen ? "open" : ""}`}>
                     {isOpen
                         ? options?.map((option) => (
-                            <li
-                                key={option.value}
-                                className={`dropdown-item ${selectedValue === option.value ? "selected" : ""}`}
-                                onClick={() => !option.disabled && handleSelect(option.value)}
-                                onKeyDown={(e) => !option.disabled && e.key === "Enter" && handleSelect(option.value)}
-                                style={{ opacity: `${disabled ? 0.75 : 1}` }}>
-                                <p className="encore-text">{option.label}</p>
-                            </li>
-                        ))
+                              <li
+                                  key={option.value}
+                                  className={`dropdown-item ${selectedValue === option.value ? "selected" : ""}`}
+                                  onClick={() => !option.disabled && handleSelect(option.value)}
+                                  onKeyDown={(e) => !option.disabled && e.key === "Enter" && handleSelect(option.value)}
+                                  style={{ opacity: `${disabled ? 0.75 : 1}` }}>
+                                  <p className="encore-text">{option.label}</p>
+                              </li>
+                          ))
                         : null}
                 </div>
             </div>

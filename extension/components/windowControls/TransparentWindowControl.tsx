@@ -69,7 +69,7 @@ const TransparentWindowControl = () => {
         };
     }, [windowZoom, controlHeight]);
 
-    return <div ref={TransparentWindowControlRef} style={style}/>;
+    return <div ref={TransparentWindowControlRef} style={style} />;
 };
 
 export default TransparentWindowControl;

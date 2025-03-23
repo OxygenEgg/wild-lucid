@@ -44,7 +44,7 @@ const ToastService = (() => {
                             backgroundColor: `${toast.isError ? "rgba(200,20,20,0.5)" : "rgba(20,20,20,0.5)"}`,
                         }}>
                         {toast.message}
-                        <Button icon={<Dismiss/>} onClick={() => handleCloseElement(toast.id)}/>
+                        <Button icon={<Dismiss />} onClick={() => handleCloseElement(toast.id)} />
                     </div>
                 ))}
             </div>

@@ -28,9 +28,9 @@ const BackgroundManager: FC = () => {
     return (
         <div className="background-wrapper">
             {BackgroundComponent ? (
-                <BackgroundComponent style={currentBackgroundStyles}/>
+                <BackgroundComponent style={currentBackgroundStyles} />
             ) : (
-                <SolidBackground style={{ backgroundColor: "#202020" }}/>
+                <SolidBackground style={{ backgroundColor: "#202020" }} />
             )}
         </div>
     );

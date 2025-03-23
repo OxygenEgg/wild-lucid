@@ -4,13 +4,13 @@ import { addToast } from "@/services/toastService";
 import { useImageStore } from "@/store/useImageStore";
 import { useSettingsStore } from "@/store/useSettingsStore";
 import type { BackgroundMode } from "@/types/background";
+import type { DynamicColorMode } from "@/types/colors";
 import type { SettingCardMap } from "@/types/settingTypes";
 import { isValidUrl } from "@/utils/fontUtils";
 import { getStyleInputMap } from "@/utils/getStyleInputMap";
 import { logDebug } from "@/utils/logUtils";
 import { renderCards } from "@/utils/render/renderCards";
 import React, { useEffect, useState } from "react";
-import { DynamicColorMode } from "@/types/colors";
 
 const BackgroundSection = () => {
     const {
@@ -102,8 +102,7 @@ const BackgroundSection = () => {
                                         display: "block",
                                         width: "20rem",
                                         borderRadius: "0.5rem",
-                                        border:
-                                            "var(--border-thickness) var(--border-style, solid) var(--border-color, rgba(var(--spice-rgb-text), 0.125))",
+                                        border: "var(--border-thickness) var(--border-style, solid) var(--border-color, rgba(var(--spice-rgb-text), 0.125))",
                                     }}
                                 />
                                 {selectedLocalImage?.fileName ? (
@@ -155,9 +154,9 @@ const BackgroundSection = () => {
 
                                 addToast(
                                     <div style={{ display: "flex", alignItems: "center" }}>
-										<span style={{ marginRight: "10px" }}>
-											Successfully Added Local Image as background from File name:
-										</span>
+                                        <span style={{ marginRight: "10px" }}>
+                                            Successfully Added Local Image as background from File name:
+                                        </span>
                                         <span style={{ fontWeight: "bold" }}>{imgFile.name}</span>
                                     </div>,
                                 );

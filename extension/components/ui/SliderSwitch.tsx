@@ -14,8 +14,8 @@ const SliderSwitch = ({ onChange, checked, label }: ToggleSetting) => {
     return (
         <div className="slider-wrapper">
             <label className="switch" aria-label={label}>
-                <input aria-label="toggleSwtich" type="checkbox" checked={checked} onChange={toggleSwtich}/>
-                <span className="slider round"/>
+                <input aria-label="toggleSwtich" type="checkbox" checked={checked} onChange={toggleSwtich} />
+                <span className="slider round" />
             </label>
         </div>
     );

@@ -14,11 +14,11 @@ const SettingsModal: FC = memo(() => {
     return (
         <Modal title="Lucid Settings" onClose={closeModal} isOpen={isOpen}>
             <div className="sections-container">
-                <BackgroundSection/>
-                <InterfaceSection/>
-                <PlaybarSection/>
-                <ResetSettingsSection/>
-                <ImportExportSection/>
+                <BackgroundSection />
+                <InterfaceSection />
+                <PlaybarSection />
+                <ResetSettingsSection />
+                <ImportExportSection />
             </div>
         </Modal>
     );

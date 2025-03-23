@@ -251,7 +251,7 @@ max-width: 10rem;
   }
 }
 
-#fs-button svg {
+#BeautifulLyricsFullscreenButton svg {
   path {
     display: none !important;
   }

@@ -18,13 +18,16 @@ const ChangeLog: FC<ChangeLogProps> = ({ releases, isLoading, error }) => {
         <div className="lucid-changelog" id="lucid-changelog">
             {releases.map((release) => (
                 <div key={release.tag_name} className="release">
-                    <button className="release-button" type="button"
-                            onClick={() => window.open(release.html_url, "_blank")}>
+                    <button
+                        className="release-button"
+                        type="button"
+                        onClick={() => window.open(release.html_url, "_blank")}>
                         View on GitHub
                     </button>
-                    {/* biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation> */}
-                    {release.body &&
-                        <div className="release-content" dangerouslySetInnerHTML={{ __html: release.body }}/>}
+                    {release.body && (
+                        // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+                        <div className="release-content" dangerouslySetInnerHTML={{ __html: release.body }} />
+                    )}
                 </div>
             ))}
         </div>

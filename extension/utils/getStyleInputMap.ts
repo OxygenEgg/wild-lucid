@@ -20,22 +20,22 @@ export const getStyleInputMap = <TMode extends string>(
                     defaultValue: style,
                     ...(typeof style === "number"
                         ? {
-                            type: "number",
-                            onChange: (value: string) => {
-                                setter(mode, key as keyof StyleOptions, Number(value));
-                            },
-                            settings: {
-                                max: 256,
-                                min: 0,
-                                step: 0.5,
-                            },
-                        }
+                              type: "number",
+                              onChange: (value: string) => {
+                                  setter(mode, key as keyof StyleOptions, Number(value));
+                              },
+                              settings: {
+                                  max: 256,
+                                  min: 0,
+                                  step: 0.5,
+                              },
+                          }
                         : {
-                            type: "text",
-                            onChange: (value: string) => {
-                                setter(mode, key as keyof StyleOptions, value);
-                            },
-                        }),
+                              type: "text",
+                              onChange: (value: string) => {
+                                  setter(mode, key as keyof StyleOptions, value);
+                              },
+                          }),
                 } as InputSetting,
             },
         }),

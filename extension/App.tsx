@@ -18,10 +18,13 @@ async function App() {
         }
 
         if (rootElement && !rootElement.hasChildNodes()) {
-            Spicetify.ReactDOM.createRoot(rootElement).render(<Main/>);
+            Spicetify.ReactDOM.createRoot(rootElement).render(<Main />);
         }
 
-        console.log("%c Lucid ignited! 🚀", "font-weight: bold; font-size: 1.25rem; color: #2196F3; padding: 0.5rem 0;");
+        console.log(
+            "%c Lucid ignited! 🚀",
+            "font-weight: bold; font-size: 1.25rem; color: #2196F3; padding: 0.5rem 0;",
+        );
     } catch (error) {
         Spicetify.showNotification(`[Lucid] Error Occurred: ${error instanceof Error ? error.message : error}`, true);
         logError(error);

@@ -61,7 +61,9 @@ export const getArtistMetaData = async (uri: string) => {
             if (error instanceof Error) {
                 if (error.message.includes("DUPLICATE_REQUEST_ERROR") && retries < MAX_RETRIES) {
                     retries++;
-                    logWarn(`Duplicate request detected (getArtistMetaData). Retrying in 1 second... (Attempt ${retries})`);
+                    logWarn(
+                        `Duplicate request detected (getArtistMetaData). Retrying in 1 second... (Attempt ${retries})`,
+                    );
                     await new Promise((resolve) => setTimeout(resolve, 1000));
                     continue;
                 }
@@ -98,7 +100,9 @@ export const getAlbumMetaData = async (uri: string) => {
             if (error instanceof Error) {
                 if (error.message.includes("DUPLICATE_REQUEST_ERROR") && retries < MAX_RETRIES) {
                     retries++;
-                    logWarn(`Duplicate request detected (getAlbumMetaData). Retrying in 1 second... (Attempt ${retries})`);
+                    logWarn(
+                        `Duplicate request detected (getAlbumMetaData). Retrying in 1 second... (Attempt ${retries})`,
+                    );
                     await new Promise((resolve) => setTimeout(resolve, 1000));
                     continue;
                 }

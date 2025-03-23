@@ -10,7 +10,7 @@ const SettingsManager = memo(() => {
     const { isOpen } = useModal("settings");
     useSettingsAccess();
 
-    return <>{isOpen && <SettingsModal/>}</>;
+    return <>{isOpen && <SettingsModal />}</>;
 });
 
 export default SettingsManager;

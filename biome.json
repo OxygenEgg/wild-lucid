@@ -5,16 +5,14 @@
     "formatWithErrors": false,
     "ignore": [],
     "attributePosition": "auto",
-    "indentStyle": "tab",
-    "indentWidth": 2,
+    "indentStyle": "space",
+    "indentWidth": 4,
     "lineWidth": 120,
-    "lineEnding": "crlf"
+    "lineEnding": "crlf",
+    "useEditorconfig": true
   },
   "files": {
-    "ignore": [
-      "src/*",
-      "extension/types/spicetify.d.ts"
-    ]
+    "ignore": ["src/*", "extension/types/spicetify.d.ts", "styles/main.css"]
   },
   "javascript": {
     "formatter": {

@@ -6,27 +6,27 @@ import { logDebug } from "@/utils/logUtils";
 import { useEffect } from "react";
 
 const ColorManager = () => {
-	logDebug("Render <ColorManager />");
+    logDebug("Render <ColorManager />");
 
-	const {
-		colorSettings: { isDynamicColor },
-	} = useSettingsStore();
+    const {
+        colorSettings: { isDynamicColor },
+    } = useSettingsStore();
 
-	const { artworkData } = useLucidStore();
-	const { selectedLocalImage, isUseLocalImage } = useImageStore();
+    const { artworkData } = useLucidStore();
+    const { selectedLocalImage, isUseLocalImage } = useImageStore();
 
-	useEffect(() => {
-		if (!isDynamicColor) {
-			resetDynamicColors();
-			return;
-		}
+    useEffect(() => {
+        if (!isDynamicColor) {
+            resetDynamicColors();
+            return;
+        }
 
-		addDynamicColorsFromImage(
-			isUseLocalImage && selectedLocalImage?.dataURL ? selectedLocalImage.dataURL : artworkData.nowPlayingArtURL,
-		);
-	}, [selectedLocalImage, isUseLocalImage, artworkData.nowPlayingArtURL, isDynamicColor]);
+        addDynamicColorsFromImage(
+            isUseLocalImage && selectedLocalImage?.dataURL ? selectedLocalImage.dataURL : artworkData.nowPlayingArtURL,
+        );
+    }, [selectedLocalImage, isUseLocalImage, artworkData.nowPlayingArtURL, isDynamicColor]);
 
-	return null;
+    return null;
 };
 
 export default ColorManager;

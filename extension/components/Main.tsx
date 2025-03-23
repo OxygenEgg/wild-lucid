@@ -23,18 +23,18 @@ const Main = () => {
     return (
         <>
             <div id="background-container" className="background-container" style={{ containerType: "normal" }}>
-                <BackgroundManager/>
+                <BackgroundManager />
             </div>
             <ModalContextProvider>
                 <div id="modal-container" className="modal-container" style={{ containerType: "normal" }}>
-                    <SettingsManager/>
-                    <ChangeLogManager/>
+                    <SettingsManager />
+                    <ChangeLogManager />
                 </div>
             </ModalContextProvider>
             <div id="state">
-                <MainStateManager/>
+                <MainStateManager />
             </div>
-            <ToastContainer/>
+            <ToastContainer />
         </>
     );
 };

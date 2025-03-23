@@ -7,10 +7,10 @@ const AnimatedBackground: FC<FCStyleOptions> = ({ style }) => {
         <div
             className="animated-background-container"
             style={{ ...(getFormattedStylesAsCSSProperty(style) as CustomCSSProperties) }}>
-            <div className="back"/>
-            <div className="backleft"/>
-            <div className="backright"/>
-            <div className="front"/>
+            <div className="back" />
+            <div className="backleft" />
+            <div className="backright" />
+            <div className="front" />
         </div>
     );
 };

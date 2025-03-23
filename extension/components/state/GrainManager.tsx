@@ -14,7 +14,7 @@ const GrainManager = () => {
 
     useBodyClass(`grain-${grainEffect}`);
 
-    return <div id="grainEffect" data-grainEffect={grainEffect}/>;
+    return <div id="grainEffect" data-grainEffect={grainEffect} />;
 };
 
 export default GrainManager;

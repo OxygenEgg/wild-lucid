@@ -265,27 +265,19 @@ kbd,
   margin-left: var(--content-spacing);
 }
 
-// WILD hide BeautifulLyricsFullscreenButton
-#BeautifulLyricsFullscreenButton {
-  display: none;
+// WILD
+#fs-button {
+  display: none !important;
 }
 
 // WILD
-#fs-button {
-  background-color: transparent;
-  border: none;
-  color: rgba(var(--spice-rgb-selected-row), .7);
+#BeautifulLyricsFullscreenButton {
   height: 32px;
   position: relative;
   width: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  :hover {
-    color: var(--spice-text);
-    transform: scale(1.04);
-  }
 }
 
 // WILD proper bottom space in artist view

@@ -21,7 +21,8 @@ const PlaybarManager = () => {
 
         const { mode, styles } = playbarSettings;
         const dynamicStyle = getFormattedStylesAsCSSProperty(styles[mode], true);
-        const height = mode === "compact" ? styles[mode].height : playbarRef.current?.clientHeight || styles[mode]?.height;
+        const height =
+            mode === "compact" ? styles[mode].height : playbarRef.current?.clientHeight || styles[mode]?.height;
 
         document.documentElement.style.setProperty("--playbar-height", `${height}px`);
 

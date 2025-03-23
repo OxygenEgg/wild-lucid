@@ -223,24 +223,17 @@ kbd,
   margin-left: var(--content-spacing);
 }
 
-#BeautifulLyricsFullscreenButton {
-  display: none;
+#fs-button {
+  display: none !important;
 }
 
-#fs-button {
-  background-color: transparent;
-  border: none;
-  color: rgba(var(--spice-rgb-selected-row), 0.7);
+#BeautifulLyricsFullscreenButton {
   height: 32px;
   position: relative;
   width: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-#fs-button :hover {
-  color: var(--spice-text);
-  transform: scale(1.04);
 }
 
 .iWTIFTzhRZT0rCD0_gOK {

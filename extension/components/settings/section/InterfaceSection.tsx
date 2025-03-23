@@ -188,7 +188,9 @@ const InterfaceSection = () => {
                 tooltip: (
                     <>
                         Supports both Google Fonts via URL and local fonts.
-                        <span>For Google Fonts, use the full URL (e.g., https://fonts.googleapis.com/css2?family=Roboto). </span>
+                        <span>
+                            For Google Fonts, use the full URL (e.g., https://fonts.googleapis.com/css2?family=Roboto).{" "}
+                        </span>
                         <span>For local fonts, type the font family name (e.g., 'Arial').</span>
                     </>
                 ),
