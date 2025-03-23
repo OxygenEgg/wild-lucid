@@ -288,11 +288,15 @@ kbd,
   }
 }
 
+// WILD proper bottom space in artist view
+.iWTIFTzhRZT0rCD0_gOK {
+  margin-bottom: var(--action-bar-padding-bottom, var(--content-spacing));
+}
+
 // TODO: beautify this when lyrics fix is there
 .LoadingLyricsCard.Loading {
   display: none !important;
 }
-
 
 div[role="tablist"],
 .StyledTabList-tablist-tabList,

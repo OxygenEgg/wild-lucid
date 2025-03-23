@@ -193,21 +193,23 @@ const BackgroundSection = () => {
                 },
             },
         },
-        {
-            id: "dynamicColorMode",
-            conditionalRender: isDynamicColor,
-            cardProps: {
-                title: "Dynamic Color Mode",
-                type: "dropdown",
-                tooltip: "Choose whether to adjust the color of all elements or just the accent color.",
-                settings: {
-                    placeholder: selectedDynamicColorMode,
-                    selectedValue: selectedDynamicColorMode,
-                    options: DYNAMIC_COLOR_MODE_OPTIONS,
-                    onChange: onDynamicColorModeChange,
-                },
-            },
-        },
+        /* HIDDEN BECAUSE NEW VERSION NOT IMPLEMENTED YET */
+        /* TODO: reenable once reimplemented */
+        // {
+        //     id: "dynamicColorMode",
+        //     conditionalRender: isDynamicColor,
+        //     cardProps: {
+        //         title: "Dynamic Color Mode",
+        //         type: "dropdown",
+        //         tooltip: "Choose whether to adjust the color of all elements or just the accent color.",
+        //         settings: {
+        //             placeholder: selectedDynamicColorMode,
+        //             selectedValue: selectedDynamicColorMode,
+        //             options: DYNAMIC_COLOR_MODE_OPTIONS,
+        //             onChange: onDynamicColorModeChange,
+        //         },
+        //     },
+        // },
     ];
 
     return (

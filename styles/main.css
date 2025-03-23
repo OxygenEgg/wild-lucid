@@ -243,6 +243,10 @@ kbd,
   transform: scale(1.04);
 }
 
+.iWTIFTzhRZT0rCD0_gOK {
+  margin-bottom: var(--action-bar-padding-bottom, var(--content-spacing));
+}
+
 .LoadingLyricsCard.Loading {
   display: none !important;
 }

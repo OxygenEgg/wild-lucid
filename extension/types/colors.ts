@@ -1,6 +1,9 @@
 export type ColorSettings = {
 	isDynamicColor: boolean;
+	dynamicColorMode: DynamicColorMode;
 };
+
+export type DynamicColorMode = "full" | "basic";
 
 export type THSL = { h: number; s: number; l: number };
 export type THEX = string;
