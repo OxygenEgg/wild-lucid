@@ -24,7 +24,7 @@ function Write-HelloMessage {
         Write-Center -Message '----------------------------------------' -ForegroundColor Blue
         Write-Center -Message 'Starting the Spicetify Lucid script...' -ForegroundColor Blue
         Write-Host
-        Write-Center -Message 'github.com/sanoojes/Spicetify-Lucid' -ForegroundColor Blue
+        Write-Center -Message 'github.com/OxygenEgg/wild-lucid' -ForegroundColor Blue
         Write-Center -Message '----------------------------------------' -ForegroundColor Blue
         Write-Host
     }
@@ -301,7 +301,7 @@ function Get-Lucid {
         [string]$Branch = 'main' 
     )
     begin {
-        $baseUrl = "https://raw.githubusercontent.com/sanoojes/Spicetify-Lucid/$Branch"
+        $baseUrl = "https://raw.githubusercontent.com/OxygenEgg/wild-lucid/$Branch"
         $filesToDownload = if ($Type -eq 'Remote') {
             @(
                 "$baseUrl/src/color.ini", 

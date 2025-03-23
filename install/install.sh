@@ -3,7 +3,7 @@
 set -e
 
 # Download URL
-theme_url="https://raw.githubusercontent.com/sanoojes/Spicetify-Lucid/main/src"
+theme_url="https://raw.githubusercontent.com/OxygenEgg/wild-lucid/main/src"
 
 # Setup directories to download to
 spice_dir="$(dirname "$(spicetify -c)")"

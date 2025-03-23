@@ -10,7 +10,7 @@
 
 - **Discord:** [https://discord.gg/knXP88Zbph](https://discord.gg/knXP88Zbph)
 - **GitHub Issues:
-  ** [https://github.com/sanoojes/Spicetify-Lucid/issues](https://github.com/sanoojes/Spicetify-Lucid/issues)
+  ** [https://github.com/OxygenEgg/wild-lucid/issues](https://github.com/OxygenEgg/wild-lucid/issues)
 
 </div>
 

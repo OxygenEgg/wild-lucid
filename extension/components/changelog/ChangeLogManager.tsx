@@ -24,7 +24,7 @@ const ChangeLogManager: FC<{ currentVersion?: string }> = ({ currentVersion }) =
 
         try {
             const response = await fetch(
-                GITHUB_RELEASES_URL || "https://api.github.com/repos/sanoojes/spicetify-lucid/releases",
+                GITHUB_RELEASES_URL || "https://api.github.com/repos/OxygenEgg/wild-lucid/releases",
             );
 
             if (!response.ok) {

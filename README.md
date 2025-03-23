@@ -71,7 +71,7 @@ experience.**
 
 - **Discord:** [https://discord.gg/PWEyKduwJh](https://discord.gg/PWEyKduwJh)
 - **GitHub Issues:
-  ** [https://github.com/sanoojes/Spicetify-Lucid/issues](https://github.com/sanoojes/Spicetify-Lucid/issues)
+  ** [https://github.com/OxygenEgg/wild-lucid/issues](https://github.com/OxygenEgg/wild-lucid/issues)
 
 ## **Installation**
 
@@ -81,13 +81,13 @@ experience.**
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-iex "& { $(iwr -useb 'https://cdn.jsdelivr.net/gh/sanoojes/Spicetify-Lucid@refs/heads/main/install/Lucid.ps1') }"
+iex "& { $(iwr -useb 'https://cdn.jsdelivr.net/gh/OxygenEgg/wild-lucid@refs/heads/main/install/Lucid.ps1') }"
 ```
 
 #### **Linux/macOS (Bash)**
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/sanoojes/Spicetify-Lucid/main/install/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/OxygenEgg/wild-lucid/main/install/install.sh | sh
 ```
 
 ## Updating
@@ -98,7 +98,7 @@ For those who used scripts and not Marketplace.
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-iex "& { $(iwr -useb 'https://raw.githubusercontent.com/sanoojes/spicetify-lucid/main/install/Lucid.ps1') } -Action Update"
+iex "& { $(iwr -useb 'https://raw.githubusercontent.com/OxygenEgg/wild-lucid/main/install/Lucid.ps1') } -Action Update"
 ```
 
 ### Other OS
@@ -113,7 +113,7 @@ For those who used scripts and not Marketplace.
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-iex "& { $(iwr -useb 'https://raw.githubusercontent.com/sanoojes/spicetify-lucid/main/install/Lucid.ps1') } -Action Uninstall"
+iex "& { $(iwr -useb 'https://raw.githubusercontent.com/OxygenEgg/wild-lucid/main/install/Lucid.ps1') } -Action Uninstall"
 ```
 
 ### Manual Uninstallation
@@ -134,7 +134,7 @@ spicetify apply
 ### **Advanced Manual Installation:**
 
 1. **Download the repository:** Visit the Lucid GitHub
-   repository: [https://github.com/sanoojes/Spicetify-Lucid](https://github.com/sanoojes/Spicetify-Lucid) and download
+   repository: [https://github.com/OxygenEgg/wild-lucid](https://github.com/OxygenEgg/wild-lucid) and download
    the code as a ZIP archive.
 2. **Locate Spicetify's Themes directory:** Use the command `spicetify path userdata` in your terminal/command prompt to
    find the path.

@@ -25,9 +25,9 @@ participating, you are expected to uphold this code. Please report unacceptable 
 ### Reporting Bugs
 
 - **Ensure the bug was not already reported** by searching on GitHub
-  under [Issues](https://github.com/Sanoojes/Spicetify-Lucid/issues).
+  under [Issues](https://github.com/OxygenEgg/wild-lucid/issues).
 - If you're unable to find an open issue addressing the
-  problem, [open a new one](https://github.com/Sanoojes/Spicetify-Lucid/issues/new). Be sure to include a **title and
+  problem, [open a new one](https://github.com/OxygenEgg/wild-lucid/issues/new). Be sure to include a **title and
   clear description**, as much relevant information as possible, and follow the provided template.
 - Include **screenshots and/or a GIF** demonstrating the expected and actual behavior.
 - **Describe the environment you encountered the bug in.** Provide your operating system, Spotify version, and Spicetify
@@ -43,7 +43,7 @@ minor improvements to existing functionality**.
 - **Provide mockups, screenshots, and/or GIFs** to illustrate the desired outcome.
 - **Explain why this enhancement would be useful** to Lucid users.
 - **Open an issue
-  ** ([https://github.com/Sanoojes/Spicetify-Lucid/issues/new](https://github.com/Sanoojes/Spicetify-Lucid/issues/new))
+  ** ([https://github.com/OxygenEgg/wild-lucid/issues/new](https://github.com/OxygenEgg/wild-lucid/issues/new))
   and follow the provided template.
 
 ### Pull Requests
@@ -55,7 +55,7 @@ minor improvements to existing functionality**.
 - **Update the README.md** with details of changes to the interface, this includes new environment variables, exposed JS
   functions, etc.
 - **Open a pull request
-  ** ([https://github.com/Sanoojes/Spicetify-Lucid/compare](https://github.com/Sanoojes/Spicetify-Lucid/compare)). The
+  ** ([https://github.com/OxygenEgg/wild-lucid/compare](https://github.com/OxygenEgg/wild-lucid/compare)). The
   body of your pull request should reference the related issue(s) if any.
 
 ## Styleguides

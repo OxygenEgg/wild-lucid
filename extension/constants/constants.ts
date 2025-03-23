@@ -5,7 +5,7 @@ import { getIsCustomControls } from "@/utils/windowControlUtils";
 export const SETTINGS_LOCAL_KEY: string = "lucid:settings";
 
 // API Urls
-export const GITHUB_RELEASES_URL = "https://api.github.com/repos/sanoojes/spicetify-lucid/releases";
+export const GITHUB_RELEASES_URL = "https://api.github.com/repos/OxygenEgg/wild-lucid/releases";
 
 // DOM Selectors & Prefixes
 export const SCROLL_NODE_SELECTORS =
